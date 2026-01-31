@@ -6,6 +6,8 @@ import Layout from "./Layout";
 import Home from "./Home/Home.jsx";
 import CollectionCategory from "./All_Products/Collection.jsx";
 import NavbarSlider from "./navbar/NavbarSlider.jsx";
+//My al clothing page
+import CollectionColthing from "./All_Products/Collection.jsx";
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
           <Route path="/" element={<Home />} />
            
           <Route path="/collections/:type" element={<CollectionCategory />} />
+
+          <Route path="/collections/:type" element={<CollectionColthing />} />
 
         </Route>
 
