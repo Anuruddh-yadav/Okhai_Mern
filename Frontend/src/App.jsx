@@ -8,6 +8,7 @@ import KurtaCategory from "./All_Products/Kurtas.jsx";
 import SareeCategory from "./All_Products/Sarees.jsx";
 import AccessoriesCategory from "./All_Products/Accessories.jsx";
 import HomeCategory from "./All_Products/Home.jsx";
+import GiftCategory from "./All_Products/Gifting.jsx";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Route path="/sarees/:type" element={<SareeCategory />} />
           <Route path="/accessories/:type" element={<AccessoriesCategory />} />
           <Route path="/home-decor/:type" element={<HomeCategory />} />
-      
+          <Route path="/gifting/:type" element={<GiftCategory />} />    
 
         </Route>
 

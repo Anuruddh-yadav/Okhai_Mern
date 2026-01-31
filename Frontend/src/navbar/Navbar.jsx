@@ -214,12 +214,86 @@ const Navbar = () => {
         { id: "6", title: "Trays and Platters" },
         { id: "7", title: "Bath" },
     ]
-    const Artisanal_Sarees = [
+
+    // Gifting
+
+    const Gifting_Artisanal = [
         { id: "1", title: "Ajrakh" },
         { id: "2", title: "Hand Painted" },
         { id: "3", title: "Handblock Printed" },
         { id: "4", title: "Handwoven" },
         { id: "5", title: "Chikankari" },
+    ]
+
+    const Gifting_Embroidery = [
+        { id: "1", title: "Okhai" },
+        { id: "2", title: "Shrujan" },
+        { id: "3", title: "Porgai" },
+        { id: "4", title: "Urmul" },
+        { id: "5", title: "Bebaak" },
+        { id: "6", title: "Onset Homes" },
+        { id: "7", title: "Dhaga HandCraft" },
+        { id: "8", title: "Sadhna" },
+        { id: "9", title: "Whitewater Kids" },
+        { id: "10", title: "Rangsutra" },
+        { id: "11", title: "Leera" },
+        { id: "12", title: "Chambray" },
+        { id: "13", title: "Soleilclo" },
+        { id: "14", title: "Samuday Craft" },
+
+    ]
+    const Gifting_Metal_Craft = [
+        { id: "1", title: "Ikai Asai" },
+        { id: "2", title: "Studio Coppre" },
+        { id: "3", title: "Silver Lining" },
+        { id: "4", title: "Anantaya Decor" },
+    ]
+    const Gifting_ChikanKari = [
+        { id: "1", title: "Phae" },
+        { id: "2", title: "Shwet" },
+    ]
+    const Gifting_Basketry = [
+        { id: "1", title: "Skadam Haat" },
+        { id: "2", title: "Kraftribe" },
+        { id: "3", title: "Pine Cone" },
+    ]
+    const Gifting_Eco_printing = [
+        { id: "1", title: "Mulya" },
+        { id: "2", title: "Bageeya" }
+    ]
+
+    const Gifting_Handblock_Printing = [
+        { id: "1", title: "Sooti Syahi" },
+        { id: "2", title: "Creative Bee" },
+        { id: "3", title: "Kirgiti" },
+        { id: "4", title: "Shuddhi" },
+        { id: "5", title: "Dharan" },
+        { id: "6", title: "Poddar Export" },
+        { id: "7", title: "Ektara" },
+        { id: "8", title: "Inkriti" },
+    ]
+    const Gifting_Ajrakh = [
+        { id: "1", title: "Rangrez" },
+        { id: "2", title: "Jahagir Khatri" },
+        { id: "3", title: "Jabbar khatri" },
+        { id: "4", title: "Okhai" },
+    ]
+    const Gifting_Upcycling_Recycling = [
+        { id: "1", title: "Lukka Chuppi" },
+        { id: "2", title: "Whe by Abira" },
+        { id: "3", title: "Patch over Patch" },
+        { id: "4", title: "The Good Doll" },
+        { id: "5", title: "Swatanya" },
+        { id: "6", title: "Nimmit Creations" },
+
+    ]
+    const Gifting_Terracotta = [
+        { id: "1", title: "Terracotta by sachi" },
+        { id: "2", title: "Antarang" },
+    ]
+    const Gifting_games = [
+        { id: "1", title: "Forggmag" },
+        { id: "2", title: "Potli" }
     ]
 
     return (
@@ -908,11 +982,11 @@ const Navbar = () => {
                             <h2 className="font-semibold text-base mb-3 ">  Artisanal Sarees </h2>
                             <ul className="space-y-1 text-sm font-Inter ">
                                 {
-                                    Artisanal_Sarees.map(item => (
+                                    Gifting_Artisanal.map(item => (
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`sarees/${item.title}`}
+                                                to={`gifting/${item.title}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -928,7 +1002,7 @@ const Navbar = () => {
 
                         {/* ---------- Img 1 ---------- */}
                         <div className="flex flex-col">
-                            <Link onClick={() => setActive(false)} to="/home-decor/artisanal-gifts">
+                            <Link onClick={() => setActive(false)} to="/gifting/gifts-for-her">
                                 <img src={ChristmasMenuImg1} alt="Artisanal Gifts" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif ">Artisanal Gifts</p>
                             </Link >
@@ -937,34 +1011,34 @@ const Navbar = () => {
 
                         {/* ---------- IMg 2  ---------- */}
                         <div className="flex flex-col">
-                            <div>
-                                <img src={ChristmasMenuImg2} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
-                                <p className="text-center text-sm mt-2 cursor-pointer font-serif">Artisanal Tops</p>
-                            </div>
+                            <Link onClick={() => setActive(false)} to="/gifting/gift-cards">
+                                <img src={ChristmasMenuImg2} alt="Gift Cards" className="w-full h-auto object-cover cursor-pointer rounded" />
+                                <p className="text-center text-sm mt-2 cursor-pointer font-serif">Gift Cards</p>
+                            </Link>
                         </div>
 
 
                         {/* ---------- Img 3 ---------- */}
                         <div className="flex flex-col">
-                            <div>
-                                <img src={ChristmasMenuImg3} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
-                                <p className="text-center text-sm mt-2 cursor-pointer font-serif">Artisanal Tops</p>
-                            </div>
+                            <Link onClick={() => setActive(false)} to="/gifting/sustainable-toys">
+                                <img src={ChristmasMenuImg3} alt="Sustainable Toys" className="w-full h-auto object-cover cursor-pointer rounded" />
+                                <p className="text-center text-sm mt-2 cursor-pointer font-serif">Sustainable Toys </p>
+                            </Link>
                         </div>
 
                         {/* ---------- Img 4 ---------- */}
                         <div className="flex flex-col">
-                            <div>
-                                <img src={ChristmasMenuImg4} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
-                                <p className="text-center text-sm mt-2 cursor-pointer font-serif">Artisanal Tops</p>
-                            </div>
+                            <Link onClick={() => setActive(false)} to="/gifting/charms">
+                                <img src={ChristmasMenuImg4} alt="Charms" className="w-full h-auto object-cover cursor-pointer rounded" />
+                                <p className="text-center text-sm mt-2 cursor-pointer font-serif">Charms</p>
+                            </Link>
                         </div>
 
                         <div className="flex flex-col">
-                            <div>
+                            <Link to="/gifting/festive-gifting" onClick={() => setActive(false)} >
                                 <img src={ChristmasMenuImg5} alt="Artisanal Dresses" className="w-full h-auto object-cover cursor-pointer rounded" />
-                                <p className="text-center text-sm mt-2 cursor-pointer font-serif">Artisanal Dresses</p>
-                            </div>
+                                <p className="text-center text-sm mt-2 cursor-pointer font-serif">Festive Gifting</p>
+                            </Link>
                         </div>
 
                     </div>
