@@ -224,7 +224,6 @@ const Navbar = () => {
         { id: "4", title: "Handwoven" },
         { id: "5", title: "Chikankari" },
     ]
-
     const Gifting_Embroidery = [
         { id: "1", title: "Okhai" },
         { id: "2", title: "Shrujan" },
@@ -243,10 +242,8 @@ const Navbar = () => {
 
     ]
     const Gifting_Metal_Craft = [
-        { id: "1", title: "Ikai Asai" },
-        { id: "2", title: "Studio Coppre" },
-        { id: "3", title: "Silver Lining" },
-        { id: "4", title: "Anantaya Decor" },
+        { id: "1", title: "Studio Coppre" },
+        { id: "2", title: "Anantaya Decor" },
     ]
     const Gifting_ChikanKari = [
         { id: "1", title: "Phae" },
@@ -261,7 +258,6 @@ const Navbar = () => {
         { id: "1", title: "Mulya" },
         { id: "2", title: "Bageeya" }
     ]
-
     const Gifting_Handblock_Printing = [
         { id: "1", title: "Sooti Syahi" },
         { id: "2", title: "Creative Bee" },
@@ -273,7 +269,7 @@ const Navbar = () => {
         { id: "8", title: "Inkriti" },
     ]
     const Gifting_Ajrakh = [
-        { id: "1", title: "Rangrez" },
+        { id: "1", title: "Tenrao by Riyaz Khatri" },
         { id: "2", title: "Jahagir Khatri" },
         { id: "3", title: "Jabbar khatri" },
         { id: "4", title: "Okhai" },
@@ -294,6 +290,36 @@ const Navbar = () => {
     const Gifting_games = [
         { id: "1", title: "Forggmag" },
         { id: "2", title: "Potli" }
+    ]
+    const Gifting_Hand_Weaving = [
+        { id: "1", title: "Sirohi" },
+        { id: "2", title: "Handweave India" },
+        { id: "3", title: "Craftoons" },
+        { id: "4", title: "Avani Kumaon" },
+        { id: "5", title: "Punarjeevana" },
+        { id: "6", title: "India Craft House" },
+        { id: "7", title: "Moralfibre" },
+        { id: "8", title: "VWas" },
+        { id: "9", title: "Sikki Grass" },
+        { id: "10", title: "Dharini" },
+        { id: "11", title: "Senses Play" },
+        { id: "12", title: "Looms of Ladakh" },
+        { id: "13", title: "Bunkar Bihar" },
+        { id: "14", title: "Gramya" },
+        { id: "15", title: "Myraa" },
+        { id: "16", title: "Fifth Origins" },
+    ]
+    const Gifting_Blue_Pottery = [
+        { id: "1", title: "Gopal Saini" },
+    ]
+    const Gifting_Ceramics = [
+        { id: "1", title: "Ikai Asai" },
+    ]
+    const Gifting_Tie_Die = [
+        { id: "1", title: "Murva Colective" },
+    ]
+    const Gifting_Candles_and_Perfumes = [
+        { id: "1", title: "Boond Fragrances" },
     ]
 
     return (
@@ -446,7 +472,7 @@ const Navbar = () => {
                                     <li id={menu.id}>
                                         <Link
                                             onClick={() => setActive(false)}
-                                            to={`clothing/${menu.title}`}
+                                            to={`collections/${menu.title}`}
                                             className="hover:text-orange-500"
                                         >
                                             {menu.title}
@@ -464,7 +490,7 @@ const Navbar = () => {
                                     <li id={menu.id}>
                                         <Link
                                             onClick={() => setActive(false)}
-                                            to={`clothing/${menu.title}`}
+                                            to={`collections/${menu.title}`}
                                             className="hover:text-orange-500"
                                         >
                                             {menu.title}
@@ -482,7 +508,7 @@ const Navbar = () => {
                                     <li id={menu.id}>
                                         <Link
                                             onClick={() => setActive(false)}
-                                            to={`clothing/${menu.title}`}
+                                            to={`collections/${menu.title}`}
                                             className="hover:text-orange-500"
                                         >
                                             {menu.title}
@@ -500,7 +526,7 @@ const Navbar = () => {
                                     <li id={menu.id}>
                                         <Link
                                             onClick={() => setActive(false)}
-                                            to={`clothing/${menu.title}`}
+                                            to={`collections/${menu.title}`}
                                             className="hover:text-orange-500"
                                         >
                                             {menu.title}
@@ -511,14 +537,14 @@ const Navbar = () => {
 
                         {/* ---------- RIGHT IMAGES ---------- */}
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="clothing/tops-blouses" >
+                            <Link to="collections/tops-blouses" >
                                 <img src={Cloth1} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Artisanal Tops</p>
                             </Link>
                         </div>
 
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="clothing/artisanal-dresses">
+                            <Link to="collections/artisanal-dresses">
                                 <img src={Cloth2} alt="Artisanal Dresses" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Artisanal Dresses</p>
                             </Link>
@@ -555,7 +581,7 @@ const Navbar = () => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`kurtas/${item.title}`}
+                                                to={`collections/${item.title}`}
                                             >
                                                 {item.title}
                                             </Link>
@@ -566,7 +592,7 @@ const Navbar = () => {
 
                         {/* ---------- Img 1 ---------- */}
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="/kurtas/kurta-sets">
+                            <Link to="/collections/kurta-sets">
                                 <img src={kurtaMenuImg1} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif ">Kurta sets</p>
                             </Link>
@@ -575,7 +601,7 @@ const Navbar = () => {
 
                         {/* ---------- IMg 2  ---------- */}
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="/kurtas/straight-kurtas">
+                            <Link to="/collections/straight-kurtas">
                                 <img src={kurtaMenuImg2} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Straight Kurtas</p>
                             </Link>
@@ -584,7 +610,7 @@ const Navbar = () => {
 
                         {/* ---------- Img 3 ---------- */}
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="/kurtas/embroidered-kurtas">
+                            <Link to="/collections/embroidered-kurtas">
                                 <img src={kurtaMenuImg3} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Embroidered Kurtas </p>
                             </Link>
@@ -592,14 +618,14 @@ const Navbar = () => {
 
                         {/* ---------- Img 4 ---------- */}
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="/kurtas/handpainted-kurtas">
+                            <Link to="/collections/handpainted-kurtas">
                                 <img src={kurtaMenuImg4} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Handpainted Kurtas </p>
                             </Link>
                         </div>
 
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="/kurtas/workwear-kurtas">
+                            <Link to="/collections/workwear-kurtas">
                                 <img src={kurtaMenuImg5} alt="Artisanal Dresses" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Workwear Kurtas </p>
                             </Link>
@@ -630,7 +656,7 @@ const Navbar = () => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`sarees/${item.title}`}
+                                                to={`/collections/${item.title}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -643,7 +669,7 @@ const Navbar = () => {
 
                         {/* ---------- Img 1 ---------- */}
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="/sarees/handwoven-sarees">
+                            <Link to="/collections/handwoven-sarees">
                                 <img src={SareeMenuImg1} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif ">Handwoven Sarees</p>
                             </Link>
@@ -652,7 +678,7 @@ const Navbar = () => {
 
                         {/* ---------- IMg 2  ---------- */}
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="/sarees/ajrakh-sarees">
+                            <Link to="/collections/ajrakh-sarees">
                                 <img src={SareeMenuImg2} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Ajrakh Saarees</p>
                             </Link>
@@ -661,7 +687,7 @@ const Navbar = () => {
 
                         {/* ---------- Img 3 ---------- */}
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="/sarees/madubani-sarees">
+                            <Link to="/collections/madubani-sarees">
                                 <img src={SareeMenuImg3} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Madubani Sarees</p>
                             </Link>
@@ -669,14 +695,14 @@ const Navbar = () => {
 
                         {/* ---------- Img 4 ---------- */}
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="/sarees/banarasi-silk-sarees">
+                            <Link to="/collections/banarasi-silk-sarees">
                                 <img src={SareeMenuImg4} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Banarasi Silk Saree</p>
                             </Link>
                         </div>
 
                         <div className="flex flex-col" onClick={() => setActive(false)} >
-                            <Link to="/sarees/handprinted-sarees">
+                            <Link to="/collections/handprinted-sarees">
                                 <img src={SareeMenuImg5} alt="Artisanal Dresses" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Handprinted Sarees </p>
                             </Link>
@@ -694,13 +720,13 @@ const Navbar = () => {
 
                         {/* ---------- Fashion Jewelerrey And Bags  ---------- */}
                         <div>
-                            <h2 className="font-semibold text-base mb-3 font-Lato">Fashion Jewellery</h2>
+                            <h2 className="font-semibold text-base mb-3 font-Lato" to ="/collections/jwellery">Fashion Jewellery</h2>
                             <ul className="space-y-1 text-sm font-Inter">
                                 {Accessary_Fashion_Jewellery.map(item => (
                                     <li key={item.id} >
                                         <Link
                                             onClick={() => setActive(false)}
-                                            to={`/accessories/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                             className="hover:text-orange-500"
                                         >
                                             {item.title}
@@ -716,7 +742,7 @@ const Navbar = () => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/accessories/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -737,7 +763,7 @@ const Navbar = () => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/accessories/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                             >
                                                 {item.title}
                                             </Link>
@@ -752,7 +778,7 @@ const Navbar = () => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/accessories/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                             >
                                                 {item.title}
                                             </Link>
@@ -773,7 +799,7 @@ const Navbar = () => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/accessories/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                             >
                                                 {item.title}
                                             </Link>
@@ -789,30 +815,30 @@ const Navbar = () => {
                         <div>
 
                             <ul className="space-y-3 text-sm">
-                                <li><Link onClick={() => setActive(false)} to="/accessories/jewellery-under-1500" className="hover:text-gray-500 mb-3 font-Inter">Jewellery Under 1500</Link></li>
-                                <li><Link onClick={() => setActive(false)} to="/accessories/accessories-under-1500" className="hover:text-gray-500 mb-3 font-Inter">Accessories  Under 1500</Link></li>
+                                <li><Link onClick={() => setActive(false)} to="/collections/jewellery-under-1500" className="hover:text-gray-500 mb-3 font-Inter">Jewellery Under 1500</Link></li>
+                                <li><Link onClick={() => setActive(false)} to="/collections/accessories-under-1500" className="hover:text-gray-500 mb-3 font-Inter">Accessories  Under 1500</Link></li>
 
-                                <li><Link onClick={() => setActive(false)} to="/accessories/gifts-under-1500" className="hover:text-gray-500 mb-3 font-Inter">Gifts Under 1500 </Link></li>
+                                <li><Link onClick={() => setActive(false)} to="/collections/gifts-under-1500" className="hover:text-gray-500 mb-3 font-Inter">Gifts Under 1500 </Link></li>
                             </ul>
                         </div>
 
                         {/* ---------- RIGHT IMAGES ---------- */}
                         <div className="flex flex-col">
                             <div>
-                                <Link onClick={() => setActive(false)} to="/accessories/jewellery">
+                                <Link onClick={() => setActive(false)} to="/collections/jewellery">
                                     <img src={AccessoriesMenuImg1} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 </Link>
-                                <p className="mt-3"><Link onClick={() => setActive(false)} to="/accessories/jewellery" className="font-semibold text-sm mt-4 cursor-pointer font-serif"> Jewellery </Link></p>
+                                <p className="mt-3"><Link onClick={() => setActive(false)} to="/collections/jewellery" className="font-semibold text-sm mt-4 cursor-pointer font-serif"> Jewellery </Link></p>
 
                             </div>
                         </div>
 
                         <div className="flex flex-col">
                             <div>
-                                <Link onClick={() => setActive(false)} to="/accessories/bags">
+                                <Link onClick={() => setActive(false)} to="/collections/bags">
                                     <img src={AccessoriesMenuImg2} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 </Link>
-                                <p className="mt-3"><Link onClick={() => setActive(false)} to="/accessories/bags" className="font-semibold text-sm mt-4 cursor-pointer font-serif"> Handcrafted Bags </Link></p>
+                                <p className="mt-3"><Link onClick={() => setActive(false)} to="/collections/bags" className="font-semibold text-sm mt-4 cursor-pointer font-serif"> Handcrafted Bags </Link></p>
 
                             </div>
                         </div>
@@ -842,14 +868,14 @@ const Navbar = () => {
                                     <li key={item.id}>
                                         <Link
                                             onClick={() => setActive(false)}
-                                            to={`/home-decor/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                             className="hover:text-orange-400"
                                         >
                                             {item.title}
                                         </Link>
                                     </li>
                                 ))}
-                                <Link to="/home-decor/Collection" onClick={() => setActive(false)} >
+                                <Link to="/collections/Collection" onClick={() => setActive(false)} >
                                     <span className="font-semibold text-base mb-3 font-Lato" >Collection </span>
                                 </Link>
                                 {
@@ -857,7 +883,7 @@ const Navbar = () => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/home-decor/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                                 className="hover:text-orange-400"
                                             >
                                                 {item.title}
@@ -875,7 +901,7 @@ const Navbar = () => {
                                     <li key={item.id}>
                                         <Link
                                             onClick={() => setActive(false)}
-                                            to={`/home-decor/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                             className="hover:text-orange-500"
                                         >
                                             {item.title}
@@ -896,7 +922,7 @@ const Navbar = () => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/home-decor/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -918,7 +944,7 @@ const Navbar = () => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/home-decor/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -986,7 +1012,7 @@ const Navbar = () => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`gifting/${item.title}`}
+                                                to={`collections/${item.title}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1002,7 +1028,7 @@ const Navbar = () => {
 
                         {/* ---------- Img 1 ---------- */}
                         <div className="flex flex-col">
-                            <Link onClick={() => setActive(false)} to="/gifting/gifts-for-her">
+                            <Link onClick={() => setActive(false)} to="/collections/gifts-for-her">
                                 <img src={ChristmasMenuImg1} alt="Artisanal Gifts" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif ">Artisanal Gifts</p>
                             </Link >
@@ -1011,7 +1037,7 @@ const Navbar = () => {
 
                         {/* ---------- IMg 2  ---------- */}
                         <div className="flex flex-col">
-                            <Link onClick={() => setActive(false)} to="/gifting/gift-cards">
+                            <Link onClick={() => setActive(false)} to="/collections/gift-cards">
                                 <img src={ChristmasMenuImg2} alt="Gift Cards" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Gift Cards</p>
                             </Link>
@@ -1020,7 +1046,7 @@ const Navbar = () => {
 
                         {/* ---------- Img 3 ---------- */}
                         <div className="flex flex-col">
-                            <Link onClick={() => setActive(false)} to="/gifting/sustainable-toys">
+                            <Link onClick={() => setActive(false)} to="/collections/sustainable-toys">
                                 <img src={ChristmasMenuImg3} alt="Sustainable Toys" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Sustainable Toys </p>
                             </Link>
@@ -1028,14 +1054,14 @@ const Navbar = () => {
 
                         {/* ---------- Img 4 ---------- */}
                         <div className="flex flex-col">
-                            <Link onClick={() => setActive(false)} to="/gifting/charms">
+                            <Link onClick={() => setActive(false)} to="/collections/charms">
                                 <img src={ChristmasMenuImg4} alt="Charms" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Charms</p>
                             </Link>
                         </div>
-
+                {/* ---------- Img 5 ---------- */}    
                         <div className="flex flex-col">
-                            <Link to="/gifting/festive-gifting" onClick={() => setActive(false)} >
+                            <Link to="/collections/festive-gifting" onClick={() => setActive(false)} >
                                 <img src={ChristmasMenuImg5} alt="Artisanal Dresses" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 <p className="text-center text-sm mt-2 cursor-pointer font-serif">Festive Gifting</p>
                             </Link>
@@ -1055,256 +1081,82 @@ const Navbar = () => {
                         <div>
                             <h2 className="font-semibold text-base mb-3 font-Lato">Embroidery</h2>
                             <ul className="space-y-1 text-sm font-Inter">
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/all-cloth"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Okhai
-                                    </Link>
-                                </li>
+                                {
+                                    Gifting_Embroidery.map(item => (
+                                        <li key={item.id}>
+                                            <Link
+                                                onClick={() => setActive(false)}
+                                                to={`/collections//${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                className="hover:text-orange-500"
+                                            >
+                                                {item.title}
+                                            </Link>
+                                        </li>
+                                    ))
 
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/new-arrival"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Shrujan
-                                    </Link>
-                                </li>
+                                }
 
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/dress-for-women"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Porgai
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/men-kurta"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Urmul
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/men-kurta&sets"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Bebaak
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/top&blousers"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Onset Homes
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/jacket&blazer"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Dhaga HandCraft
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kaftans"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Sadhna
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/bottom-wear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Whitewater Kids
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/silk-printed-dupatta"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Rangsutra
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Leera
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Chambray
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Soleilclo
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Samuday Craft
-                                    </Link>
-                                </li>
                                 <h2 className="font-semibold text-base mb-3 mt-3 font-Lato">Metal Craft</h2>
 
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Ikai Asai
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Studio Coppre
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Silver Lining
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Anantaya Decor
-                                    </Link>
-                                </li>
-                                <h2 className="font-semibold text-base mb-3 mt-3 font-Lato">ChikanKari</h2>
+                                {
+                                    Gifting_Metal_Craft.map(item => (
+                                        <li key={item.id}>
+                                            <Link
+                                                onClick={() => setActive(false)}
+                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                className="hover:text-orange-500"
+                                            >
+                                                {item.title}
+                                            </Link>
+                                        </li>
+                                    ))
 
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Phae
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Shwet
-                                    </Link>
-                                </li>
+                                }
+                                <h2 className="font-semibold text-base mb-3 mt-3 font-Lato">Chikankari</h2>
+
+                                {
+                                    Gifting_ChikanKari.map(item => (
+                                        <li key={item.id}>
+                                            <Link
+                                                onClick={() => setActive(false)}
+                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                className="hover:text-orange-500"
+                                            >
+                                                {item.title}
+                                            </Link>
+                                        </li>
+                                    ))
+
+                                }
+
                                 <h2 className="font-semibold text-base mb-3 mt-3 font-Lato">Basketry</h2>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        SKadam Haat
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Kraftribe
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Pine Cone
-                                    </Link>
-                                </li>
-
+                                {Gifting_Basketry.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                               
                                 <h2 className="font-semibold text-base mb-3 mt-3 font-Lato">Eco Printing </h2>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Mulya
-                                    </Link>
-                                </li>
-
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/night-suits"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Bageeya
-                                    </Link>
-                                </li>
-
-
-
+                                 {Gifting_Eco_printing.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                                
                             </ul>
                         </div>
 
@@ -1312,227 +1164,76 @@ const Navbar = () => {
                         <div>
                             <h2 className="font-semibold text-base mb-3 font-Lato">Handblock Printing</h2>
                             <ul className="space-y-1 text-sm font-Inter">
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/all-cloth"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Sooti Syahi
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/new-arrival"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Creative Bee
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/dress-for-women"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Kirgiti
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/men-kurta&sets"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Shuddhi
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/top&blousers"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Dharan
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/jacket&blazer"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Poddar Export
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kaftans"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Ektara
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/bottom-wear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Inkriti
-                                    </Link>
-                                </li>
+                                 {Gifting_Handblock_Printing.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                               
                                 <h2 className="font-semibold text-base mt-3  mb-3 font-Lato">Ajrakh  </h2>
 
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/silk-printed-dupatta"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Tinaro by Riyaz Khatri
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/bottom-wear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Jahagir Khatri
-                                    </Link>
-                                </li>
-
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/silk-printed-dupatta"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Jabbar Khatri
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/bottom-wear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Okhai
-                                    </Link>
-                                </li>
-
+                                 {Gifting_Ajrakh.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                                
                                 <h2 className="font-semibold text-base mt-3  mb-3 font-Lato">Upcycling and Recycling   </h2>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/silk-printed-dupatta"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Lukka Chuppi
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/bottom-wear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Whe by Abira
-                                    </Link>
-                                </li>
-
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/silk-printed-dupatta"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Patch over Patch
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/bottom-wear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        The Good Doll
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/silk-printed-dupatta"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Swatanya
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/bottom-wear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Nimmit Creations
-                                    </Link>
-                                </li>
+                                 {Gifting_Upcycling_Recycling.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                                
                                 <h2 className="font-semibold text-base mt-3  mb-3 font-Lato">Terracotta  </h2>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/silk-printed-dupatta"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Terracotta by sachi
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/bottom-wear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Antarang
-                                    </Link>
-                                </li>
+                                 {Gifting_Terracotta.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                                
                                 <h2 className="font-semibold text-base mt-3  mb-3 font-Lato">Games   </h2>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/silk-printed-dupatta"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Forggmag
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/silk-printed-dupatta"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Potli
-                                    </Link>
-                                </li>
-
-
+                                 {Gifting_games.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                               
                             </ul>
                         </div>
 
@@ -1541,199 +1242,76 @@ const Navbar = () => {
                         <div>
                             <h2 className="font-semibold text-base mb-3">Hand Weaving </h2>
                             <ul className="space-y-1 text-sm">
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-clothing"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Sirohi
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-furnishing"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Handweave India
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Craftoons
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Avani Kumaon
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Punarjeevana
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        India Craft House
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Moralfibre
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        VWas
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Sikki Grass
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Dharini
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Senses Play
-                                    </Link>
-                                </li>
-
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Looms of Ladakh
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Bunkar Bihar
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Gramya
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Myaraa
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Fifth Origins
-                                    </Link>
-                                </li>
+                                 {Gifting_Hand_Weaving.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                               
                                 <h2 className="font-semibold text-base mb-3">Blue Pottery  </h2>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Gopal Saini
-                                    </Link>
-                                </li>
+                                 {Gifting_Blue_Pottery.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                               
+                               
                                 <h2 className="font-semibold text-base mb-3">Ceramics   </h2>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Ikai Asai
-                                    </Link>
-                                </li>
+                                 {Gifting_Ceramics.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                               
                                 <h2 className="font-semibold text-base mb-3">Tie & Die    </h2>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Murva Colective
-                                    </Link>
-                                </li>
+                                 {Gifting_Tie_Die.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                               
                                 <h2 className="font-semibold text-base mb-3">Candles and Perfumes  </h2>
-                                <li>
-                                    <Link
-                                        onClick={() => setActive(false)}
-                                        to="/products/kids-winterwear"
-                                        className="hover:text-orange-500"
-                                    >
-                                        Boond Fragrances
-                                    </Link>
-                                </li>
-
-
+                                 {Gifting_Candles_and_Perfumes.map(item => (
+                                    <li key={item.id}>
+                                        <Link
+                                            onClick={() => setActive(false)}
+                                            to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="hover:text-orange-500"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))
+                                }
+                           
                             </ul>
                         </div>
 
@@ -1741,29 +1319,29 @@ const Navbar = () => {
                         <div>
 
                             <ul className="space-y-1 text-sm">
-                                <li><Link onClick={() => setActive(false)} to="/products/mirror-work" className="hover:text-gray-500 mb-3 font-bold">Jewellery Under 1500</Link></li>
-                                <li><Link onClick={() => setActive(false)} to="/products/applique" className="hover:text-gray-500 mb-3 font-bold">Accessories  Under 1500</Link></li>
-                                <li><Link onClick={() => setActive(false)} to="/products/hand-embroidered" className="hover:text-gray-500 mb-3 font-bold">Gifts Under 1500 </Link></li>
+                                <li><Link onClick={() => setActive(false)} to="/collections/jwellery" className="hover:text-gray-500 mb-3 font-semibold text-base">Jewellery Under 1500</Link></li>
+                                <li><Link onClick={() => setActive(false)} to="/collections/accessories" className="hover:text-gray-500 mb-3 font-semibold text-base">Accessories  Under 1500</Link></li>
+                                <li><Link onClick={() => setActive(false)} to="/collections/gifts" className="hover:text-gray-500 mb-3 font-semibold text-base">Gifts Under 1500 </Link></li>
                             </ul>
                         </div>
 
                         {/* ---------- RIGHT IMAGES ---------- */}
                         <div className="flex flex-col">
                             <div>
-                                <Link onClick={() => setActive(false)} to="/products/jewellery">
+                                <Link onClick={() => setActive(false)} to="/collections/serveware">
                                     <img src={ArtisansMenuImg1} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 </Link>
-                                <p className="mt-3"><Link onClick={() => setActive(false)} to="/products/jewellery" className="font-semibold text-sm mt-4 cursor-pointer font-serif"> Serveware </Link></p>
+                                <p className="mt-3"><Link onClick={() => setActive(false)} to="/collections/serveware" className="font-semibold text-md mt-4 cursor-pointer font-serif"> Serveware </Link></p>
 
                             </div>
                         </div>
 
                         <div className="flex flex-col">
                             <div>
-                                <Link onClick={() => setActive(false)} to="/products/bags">
+                                <Link onClick={() => setActive(false)} to="/collections/bags">
                                     <img src={ArtisansMenuImg2} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                 </Link>
-                                <p className="mt-3"><Link onClick={() => setActive(false)} to="/products/bags" className="font-semibold text-sm mt-4 cursor-pointer font-serif">Baskets </Link></p>
+                                <p className="mt-3"><Link onClick={() => setActive(false)} to="/collections/bags" className="font-semibold text-sm mt-4 cursor-pointer font-serif">Baskets </Link></p>
 
                             </div>
                         </div>

@@ -9,6 +9,8 @@ import SareeCategory from "./All_Products/Sarees.jsx";
 import AccessoriesCategory from "./All_Products/Accessories.jsx";
 import HomeCategory from "./All_Products/Home.jsx";
 import GiftCategory from "./All_Products/Gifting.jsx";
+import CollectionCategory from "./All_Products/Collection.jsx";
+
 
 function App() {
   return (
@@ -19,12 +21,8 @@ function App() {
         <Route element={<Layout />}>
 
           <Route path="/" element={<Home />} />
-          <Route path="/clothing/:type" element={<ClothingCategory />} />
-          <Route path="/kurtas/:type" element={<KurtaCategory />} />
-          <Route path="/sarees/:type" element={<SareeCategory />} />
-          <Route path="/accessories/:type" element={<AccessoriesCategory />} />
-          <Route path="/home-decor/:type" element={<HomeCategory />} />
-          <Route path="/gifting/:type" element={<GiftCategory />} />    
+           
+          <Route path="/collections/:type" element={<CollectionCategory />} />
 
         </Route>
 
