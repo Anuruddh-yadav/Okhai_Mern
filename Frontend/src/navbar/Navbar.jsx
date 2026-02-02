@@ -72,7 +72,8 @@ const Navbar = () => {
     }, []);
 
 
-    const women = [{ id: "1", title: "All Clothing" },
+    const women = [
+        { id: "1", title: "All Clothing" },
     { id: "2", title: "New Arrivals" },
     { id: "3", title: "Kurtas" },
     { id: "4", title: "Kurtas & Kurta Sets" },
@@ -338,7 +339,7 @@ const Navbar = () => {
         <>
 
             <div
-                className="w-full bg-white  relative top-0 left-0 z-50 shadow-md  mt-10"
+                className="w-full bg-white  fixed top-0 left-0 z-50 shadow-md  mt-8"
                 ref={dropdownRef}
             >
                 <div className="w-full flex justify-between items-center px-4 md:px-10 ">

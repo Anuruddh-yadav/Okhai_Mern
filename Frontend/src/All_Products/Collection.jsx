@@ -13,7 +13,7 @@ const Collection = () => {
   </aside>
 
   {/* MAIN CONTENT */}
-  <div className="ml-[280px] flex-1">
+  <div className="ml-70 flex-1">
     <ProductsHeader total={allWomenProducts.totalCount} />
         <ProductGrid products={allWomenProducts.products} />
   </div>
