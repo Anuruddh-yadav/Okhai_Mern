@@ -6,7 +6,7 @@ import footerImage2 from '../assets/company/firstPageimgs/odop.avif';
 const Footer = () => {
     return (
         <>
-            <footer className='footer h-130 px-20 mt-8'>
+            <footer className='footer h-130 px-20 mt-3  z-50'>
                 <div className='flex flex-row items-center justify-center gap-4 p-2 pt-10'>
                     <div className='font-serif text-white'>Stay in touch with us</div>
                     <div className='border-dashed border p-1.25 border-white'>

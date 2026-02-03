@@ -1,47 +1,46 @@
-import Kurta1 from "../../../assets/company/clothingPageImages/kurta1.jpg";
-import Dress1 from "../../../assets/company/clothingPageImages/dress1.webp";
+
+import React from "react";
+import { Heart, ShoppingBag } from 'lucide-react'; // Using lucide-react for icons
 
 
-const imageMap = {
-  "kurta1.jpg": Kurta1,
-  "dress1.webp": Dress1
-};
-
-const ProductCard = ({ product }) => {
+const ProductCard = ({ img, title, price, tag }) => {
   return (
-    <div className="cursor-pointer group">
-      {/* IMAGE CONTAINER */}
-      <div className="relative w-full h-[480px] overflow-hidden">
-        <img
-          src={imageMap[product.image]}
-          alt={product.name}
-          className="w-full h-full object-cover"
+    /* Added z-0 and relative to keep the card at the base level */
+    <div className="relative  z-10 group  max-w-[300px] font-sans group bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer">
+      
+      {/* Image Container */}
+      <div className="relative overflow-hidden">
+        <img 
+          src={img} 
+          alt="Product"
+          className="w-full h-auto object-cover"
         />
-
-        {/* LEFT ARROW */}
-        <button className="absolute left-2 top-1/2 -translate-y-1/2 
-          bg-white p-2 rounded-full shadow 
-          opacity-0 group-hover:opacity-100 transition">
-          ‹
-        </button>
-
-        {/* RIGHT ARROW */}
-        <button className="absolute right-2 top-1/2 -translate-y-1/2 
-          bg-white p-2 rounded-full shadow 
-          opacity-0 group-hover:opacity-100 transition">
-          ›
-        </button>
-
-        {product.isNew && (
-          <span className="absolute bottom-2 right-2 bg-red-600 text-white text-xs px-2 py-0.5">
-            New
-          </span>
-        )}
+        
+        {/* The "New" badge stays on top of the image only */}
+        <span className="absolute bottom-2 right-2 bg-[#80333a] text-white text-[10px] px-2 py-1 z-10">
+          {tag ? tag : 'New'}
+        </span>
       </div>
 
-      {/* TEXT (OUTSIDE IMAGE CONTAINER) */}
-      <h4 className="mt-2 text-sm">{product.name}</h4>
-      <p className="text-sm font-semibold">₹{product.price}</p>
+      {/* Details Section */}
+      <div className="mt-3 p-2">
+        <div className="flex justify-between items-center mb-2">
+          <span className="border border-black px-4 py-1 text-xs uppercase tracking-widest">
+            Ikat
+          </span>
+          <div className="flex gap-3 text-gray-500">
+            <Heart size={18} />
+            <ShoppingBag size={18} />
+          </div>
+        </div>
+
+        <h3 className="text-sm font-normal text-gray-800">
+          {title}
+        </h3>
+        <p className="text-base font-bold mt-1">
+          ₹ {price}
+        </p>
+      </div>
     </div>
   );
 };
