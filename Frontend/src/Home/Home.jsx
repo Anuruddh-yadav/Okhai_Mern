@@ -41,7 +41,7 @@ const Main = () => {
 
     return (
         <>
-        <main className='relative z-20 top-40'>
+        <main className='relative z-20 pt-40'>
             <section>
                 {/* Image Slider starts here */}
                 <div className='flex flex-col items-center justify-center gap-4 p-2'>

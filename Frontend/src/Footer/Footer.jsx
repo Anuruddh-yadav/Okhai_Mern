@@ -73,7 +73,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className='flex flex-row justify-between mt-10'>
+                        <div className='flex flex-row justify-between mt-10 '>
                             <figure>
                                 <img className='h-20 cursor-pointer' src={footerImage1} alt="Footer Image 1" />
                             </figure>
