@@ -47,7 +47,7 @@ const Section = ({ title, content, quote, image, reverse, hasFloral }) => (
 
 const About = () => {
   return (
-    <div className="bg-white font-serif text-[#333] selection:bg-gray-100">
+    <div className="bg-white font-serif text-[#333] selection:bg-gray-100 pt-40">
       
       {/* 1. Hero Video - Full Width */}
       <div className="w-full mb-4">

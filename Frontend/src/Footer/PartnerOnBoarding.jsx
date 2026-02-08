@@ -2,7 +2,7 @@ import React from 'react';
 
 const PartnerOnBoarding = () => {
   return (
-    <div className="min-h-screen bg-white text-[#333] font-serif py-12 px-4 selection:bg-gray-100">
+    <div className="min-h-screen bg-white text-[#333] font-serif py-12 px-4 selection:bg-gray-100 pt-40">
       
       {/* Container for Centered Layout */}
       <div className="max-w-4xl mx-auto text-center">

@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Path based on your provided directory: src/Footer/aboutImages
-import image1 from './aboutImages/image1.webp'; 
+import image1 from './aboutImages/contact.png'; 
 
 const Contact = () => {
   return (
-    <div className="bg-white font-serif text-[#333] selection:bg-gray-100">
+    <div className="bg-white font-serif text-[#333] selection:bg-gray-100 pt-40">
       
       {/* 1. Hero Image Section - Matches Original Height/Feel */}
       <div className="relative w-full h-[250px] md:h-[400px] overflow-hidden">
