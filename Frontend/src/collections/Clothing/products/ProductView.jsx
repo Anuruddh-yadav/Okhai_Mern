@@ -45,8 +45,8 @@ const ProductView = () => {
         {/* LEFT: IMAGE GALLERY */}
 <div className="space-y-6">
   {/* Main Image - FIXED CROPPING */}
-  <div className="relative bg-gradient-to-br from-orange-50 to-pink-50 rounded-xl shadow-sm overflow-hidden min-h-[450px] md:min-h-[550px] lg:min-h-[650px]">
-    <div className="w-full h-[500px] md:h-[600px] lg:h-[700px] flex items-start justify-center p-8 md:p-12">
+  <div className="relative bg-linear-to-br from-orange-50 to-pink-50 rounded-xl shadow-sm overflow-hidden min-h-112.5 md:min-h-137.5 lg:min-h-162.5">
+    <div className="w-full h-125 md:h-150 lg:h-175 flex items-start justify-center p-8 md:p-12">
       <img
         src={product.images[activeImage]}
         alt={product.name}
@@ -64,7 +64,7 @@ const ProductView = () => {
     {product.images.map((img, i) => (
       <div
         key={i}
-        className={`flex-shrink-0 w-20 h-24 md:w-24 md:h-32 rounded-xl overflow-hidden cursor-pointer border-4 transition-all hover:scale-105 shadow-sm ${
+        className={`shrink-0 w-20 h-24 md:w-24 md:h-32 rounded-xl overflow-hidden cursor-pointer border-4 transition-all hover:scale-105 shadow-sm ${
           activeImage === i 
             ? "border-orange-500 shadow-orange-200" 
             : "border-transparent hover:border-orange-300 hover:shadow-md"
@@ -201,7 +201,7 @@ const ProductView = () => {
                   <div className="grid grid-cols-2 md:grid-cols-1 gap-2">
                     {product.details.map((detail, idx) => (
                       <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 shrink-0"></div>
                         <span>{detail}</span>
                       </div>
                     ))}
