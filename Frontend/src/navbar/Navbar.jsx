@@ -53,7 +53,7 @@ import Cloth2 from "./navbar_assets/Clothing/clothing2.png"
 import SeeImage1  from "./navbar_assets/SellAll/seeAll1.png"
 import SeeImage2  from "./navbar_assets/SellAll/seeAll2.png"
 
-const Navbar = () => {
+const Navbar = ({ onCartClick }) => {
 
     const [active, setActive] = useState();
     const dropdownRef = useRef(null);
@@ -333,7 +333,31 @@ const Navbar = () => {
       {id:"8" , title:"Sale All Apparles"},
       {id:"9" , title:"Rescue"},
       {id:"10" , title:"Sample Sale"},
-    ]
+    ];
+
+
+    //Cart View Pop Up logic
+    // 1. Accept the prop
+
+    // ... existing logic
+    
+       <div className="flex items-center gap-4"> 
+           {/* ... other icons like User, Search ... */}
+
+           {/* UPDATE THE CART ICON SECTION */}
+           {/* If it was a Link, change it to a button or div */}
+           <div 
+               className="cursor-pointer relative" 
+               onClick={onCartClick} // <--- Trigger the popup
+           >
+               <img src={Cart} alt="Cart" className="w-5 min-w-5" />
+               <p className="w-4 absolute bottom-[-4px] right-[-4px] ...">0</p>
+           </div>
+           
+           {/* ... */}
+       </div>
+
+
 
     return (
         <>
@@ -348,32 +372,36 @@ const Navbar = () => {
                             <img
                                 src={Logo}
                                 alt="Okhai Logo"
-                                className="px-8 h-22 py-2 cursor-pointer"
+                                className="px-8 h-16 py-2 cursor-pointer ml-20"
                             />
                         </Link>
                     </div>
 
-                    <div className="hidden md:flex items-center px-10 py-6">
+                    <div className="hidden md:flex items-center px-10 py-6 mr-8">
                         <img
                             src={Search}
                             alt="Search"
                             className="px-1 h-9 cursor-pointer py-2"
                         />
+                        <Link to="createaccount">
                         <img
                             src={User}
                             alt="User"
                             className="px-1 h-9 cursor-pointer  py-2"
                         />
+                        </Link>
                         <img
                             src={Heart}
                             alt="Wishlist"
                             className="px-1 h-9  cursor-pointer py-2"
                         />
-                        <img
+                        {/* <Link to="/cartview"> */}
+                        <img onClick={onCartClick}
                             src={Cart}
                             alt="Cart"
                             className="px-1 h-9  cursor-pointer py-2"
                         />
+                        {/* </Link> */}
                     </div>
 
                     <div className="md:hidden flex items-center pr-4">
@@ -381,7 +409,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="hidden md:flex w-auto  gap-19 py-3 justify-between text-sm tracking-wide font-medium px-22">
+                <div className="hidden md:flex w-345 mx-auto gap-19 py-3 justify-between text-sm tracking-wide font-medium px-22 pt-0">
                     <button>
                         <span
                             className={clsx(

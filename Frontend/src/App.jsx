@@ -7,26 +7,20 @@ import About from "./Footer/About.jsx";
 import PartnerOnBoarding from "./Footer/PartnerOnBoarding.jsx"; 
 import Contact from "./Footer/Contact.jsx"; 
 import CreateAccount from "./Home/CreateAccount.jsx";
-import FashoinJewellery from "./collections/Accessories/FashoinJewellery/page.jsx";
 
-// import Navbar from "./navbar/Navbar";
-// import Footer from "./Footer/Footer";
-// import NavbarSlider from "./navbar/NavbarSlider";
 
 function App() {
   return (
-    
+  //  <FashoinJewellery />
     <BrowserRouter>
-    {/* <NavbarSlider/>
-    <Navbar />
-    <CreateAccount />
-    <Footer /> */}
     
     <ScrollToTop />
       <Routes>
         {/* All routes inside Layout will show the Navbar and Footer */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/createaccount" element={<CreateAccount />} />
+          {/* <Route path="/cartview" element={<Cart />} /> */}
           <Route path="/collections/:type" element={<CollectionCategory />} />
           
           {/* Footer Routes */}

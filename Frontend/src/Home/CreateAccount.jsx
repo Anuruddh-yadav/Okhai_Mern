@@ -5,7 +5,7 @@ import createaccount from './createaccount.webp';
 const CreateAccount = () => {
   return (
     /* Main Wrapper: increased horizontal padding (lg:px-40) to create more white space on sides */
-    <div className="flex flex-col md:flex-row min-h-screen w-full bg-white py-12 px-6 md:px-20 lg:px-40 gap-12 pt-41">
+    <div className="flex flex-col md:flex-row min-h-screen w-full bg-white py-12 px-6 md:px-20 lg:px-40 gap-12 pt-37">
       
       {/* LEFT SIDE: Image Container */}
       {/* h-full and no vertical padding ensures the image fills the vertical space of this div */}
