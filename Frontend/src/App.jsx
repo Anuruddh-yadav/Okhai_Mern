@@ -23,7 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/createaccount" element={<CreateAccount />} />
           {/* <Route path="/cartview" element={<Cart />} /> */}
-          <Route path="/collections/:productId" element={<CollectionCategory />} />
+          <Route path="/collections/:categoryName" element={<CollectionCategory />} />
           <Route path="/product/:slug" element={<ProductView />} />
 
 

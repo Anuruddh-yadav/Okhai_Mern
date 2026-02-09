@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 const ProductView = () => {
   // 1. Get the dynamic ID or slug from the URL
-  const { productId } = useParams();
+  const { slug } = useParams();
 
   const [product, setProduct] = useState(null);
   const [activeImage, setActiveImage] = useState(0);
@@ -17,7 +17,7 @@ const ProductView = () => {
     // 2. Logic to find the clicked product
     // We check against ID (converted to Number) or Slug depending on your Route setup
     const found = Products.find(item =>
-      item.id === Number(productId) || item.slug === productId
+      item.id === Number(slug) || item.slug === slug
     );
 
     if (found) {
@@ -29,7 +29,7 @@ const ProductView = () => {
     }
     // Always scroll to top when a new product loads
     window.scrollTo(0, 0);
-  }, [productId]);
+  }, [slug]);
 
   // 3. Loading state if product isn't found yet
   if (!product) {

@@ -493,7 +493,7 @@ const Collection = () => {
             {finalDisplayProducts.map((product) => (
               <Link
                 key={product.id}
-                to={'/product/${product.id}'} // Use slug here to match your route
+               to={`/product/${product.slug}`} 
               >
 
                 <ProductCard
@@ -509,7 +509,7 @@ const Collection = () => {
         ) : (
           /* --- PRODUCT NOT FOUND MESSAGE --- */
           <div className="flex flex-col items-center justify-center py-20 text-center">
-            <h2 className="text-2xl font-serif text-gray-800 mb-2">No products found</h2>
+            <h2 className="text-2xl font-serif text-gray-800 mb-2">No products found for {categoryName}</h2>
             <p className="text-gray-500 mb-6">Try adjusting your filters to find what you're looking for.</p>
             <button
               onClick={resetAllFilters}
