@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import '../global.css';
 import footerImage1 from '../assets/company/firstPageimgs/footer_img1.webp';
 import footerImage2 from '../assets/company/firstPageimgs/odop.avif';
+
 
 const Footer = () => {
     return (
@@ -23,8 +25,8 @@ const Footer = () => {
                                 <li>Explore</li>
                                 <li>
                                     <ul className='mt-5 text-xs space-y-1'>
-                                        <li className='cursor-pointer hover:text-amber-400'>About us</li>
-                                        <li className='cursor-pointer hover:text-amber-400'>Partner onboarding</li>
+                                        <li className='cursor-pointer hover:text-amber-400'><Link to="/about">About us</Link></li>
+                                        <li className='cursor-pointer hover:text-amber-400'><Link to="/partner-onboarding">Partner onboarding</Link></li>
                                         <li className='cursor-pointer hover:text-amber-400'>News and events</li>
                                         <li className='cursor-pointer hover:text-amber-400'>Work with us</li>
                                         <li className='cursor-pointer hover:text-amber-400'>Bulk Order</li>
@@ -51,7 +53,7 @@ const Footer = () => {
                                 <li>Connect with us</li>
                                 <li>
                                     <ul className='mt-5 text-xs space-y-1'>
-                                        <li className='cursor-pointer hover:text-amber-400'>Contact us</li>
+                                        <li className='cursor-pointer hover:text-amber-400'><Link to="/contact">Contact us</Link></li>
                                         <li className='cursor-pointer hover:text-amber-400'>079-66131721</li>
                                         <li className='cursor-pointer hover:text-amber-400'>+91 6359 021 222</li>
                                         <li className='cursor-pointer hover:text-amber-400'>okhaicfe@okhai.org</li>
