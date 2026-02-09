@@ -10,6 +10,7 @@ import NavbarSlider from "./navbar/NavbarSlider.jsx";
 import ProductView from "./collections/Clothing/products/ProductView.jsx";
 //My al clothing page
 import CollectionColthing from "./All_Products/Collection.jsx";
+import FashoinJewellery from "./collections/Accessories/FashoinJewellery/page.jsx";
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
     <>
   
     <BrowserRouter>
-    <ProductView />
+    <FashoinJewellery />
+    {/* <ProductView /> */}
       {/*<Routes>
 
          Layout route 

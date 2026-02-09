@@ -36,7 +36,7 @@ const Cart = ({ isOpen = true, onClose, cartItems = [] }) => {
       />
 
       {/* CART DRAWER */}
-      <aside className="fixed top-0 right-0 z-50 h-screen w-[380px] bg-white shadow-xl flex flex-col">
+      <aside className="fixed top-0 right-0 z-50 h-screen w-95 bg-white shadow-xl flex flex-col">
         
         {/* HEADER */}
         <div className="flex items-center justify-between px-5 py-4 border-b">

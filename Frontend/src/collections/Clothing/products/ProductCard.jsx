@@ -6,7 +6,7 @@ import { Heart, ShoppingBag } from 'lucide-react'; // Using lucide-react for ico
 const ProductCard = ({ img, title, price, tag }) => {
   return (
     /* Added z-0 and relative to keep the card at the base level */
-    <div className="relative  z-10 group  max-w-[300px] font-sans group bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer">
+    <div className="relative  z-10 group  max-w-75 font-sans group bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer">
       
       {/* Image Container */}
       <div className="relative overflow-hidden">
