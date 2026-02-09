@@ -18,8 +18,7 @@ const Layout = () => {
       {/* Render Cart as an overlay, passing the state and closer function */}
       <Cart 
         isOpen={isCartOpen} 
-        onClose={() => setIsCartOpen(false)} 
-        cartItems={[]} // Pass your actual cart data here
+        onClose={() => setIsCartOpen(false)}
       />
 
       <Outlet />  

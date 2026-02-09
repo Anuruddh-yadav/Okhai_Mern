@@ -1,12 +1,43 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Heart, ShoppingBag } from 'lucide-react'; // Using lucide-react for icons
+import { useCart } from '../../../hooks/useCart';
+import { useNavigate } from 'react-router-dom';
 
 
-const ProductCard = ({ img, title, price, tag }) => {
+const ProductCard = ({ img, title, price, tag, productId, slug }) => {
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+  const [addedToCart, setAddedToCart] = useState(false);
+
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    
+    addToCart({
+      id: productId || title,
+      name: title,
+      price: price,
+      image: img,
+      size: "M", // Default size for quick add
+      qty: 1,
+    });
+
+    setAddedToCart(true);
+    setTimeout(() => setAddedToCart(false), 2000);
+  };
+
+  const handleProductClick = () => {
+    if (slug) {
+      navigate(`/product/${slug}`);
+    }
+  };
+
   return (
     /* Added z-0 and relative to keep the card at the base level */
-    <div className="relative  z-10 group  max-w-75 font-sans group bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer">
+    <div 
+      onClick={handleProductClick}
+      className="relative z-10 group max-w-75 font-sans bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer"
+    >
       
       {/* Image Container */}
       <div className="relative overflow-hidden">
@@ -30,8 +61,14 @@ const ProductCard = ({ img, title, price, tag }) => {
             Ikat
           </span>
           <div className="flex gap-3 text-gray-500">
-            <Heart size={18} />
-            <ShoppingBag size={18} />
+            <Heart size={18} className="cursor-pointer hover:text-red-500 transition" />
+            <ShoppingBag 
+              size={18}
+              onClick={handleAddToCart}
+              className={`cursor-pointer transition ${
+                addedToCart ? 'text-green-500' : 'hover:text-orange-500'
+              }`}
+            />
           </div>
         </div>
 

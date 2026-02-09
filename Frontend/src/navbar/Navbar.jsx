@@ -4,6 +4,7 @@ import NavbarSlider from './NavbarSlider.jsx';
 import clsx from "clsx";
 
 import React, { useState, useRef, useEffect } from "react";
+import { useCart } from "../hooks/useCart";
 
 import Logo from './navbar_assets/okhai_logo.png';
 import Heart from './navbar_assets/heart.png';
@@ -55,6 +56,7 @@ import SeeImage2 from "./navbar_assets/SellAll/seeAll2.png"
 
 const Navbar = ({ onCartClick }) => {
 
+    const { getTotalItems } = useCart();
     const [active, setActive] = useState();
     const dropdownRef = useRef(null);
     // Close dropdown when clicking outside
@@ -395,13 +397,18 @@ const Navbar = ({ onCartClick }) => {
                             alt="Wishlist"
                             className="px-1 h-9  cursor-pointer py-2"
                         />
-                        {/* <Link to="/cartview"> */}
-                        <img onClick={onCartClick}
-                            src={Cart}
-                            alt="Cart"
-                            className="px-1 h-9  cursor-pointer py-2"
-                        />
-                        {/* </Link> */}
+                        <div className="cursor-pointer relative" onClick={onCartClick}>
+                            <img
+                                src={Cart}
+                                alt="Cart"
+                                className="px-1 h-9 cursor-pointer py-2"
+                            />
+                            {getTotalItems() > 0 && (
+                                <span className="absolute top-0 right-0 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                                    {getTotalItems()}
+                                </span>
+                            )}
+                        </div>
                     </div>
 
                     <div className="md:hidden flex items-center pr-4">

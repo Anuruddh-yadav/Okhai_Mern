@@ -8,32 +8,36 @@ import PartnerOnBoarding from "./Footer/PartnerOnBoarding.jsx";
 import Contact from "./Footer/Contact.jsx";
 import CreateAccount from "./Home/CreateAccount.jsx";
 import ProductView from "./collections/Clothing/products/ProductView.jsx";
+import Checkout from "./Checkout/Checkout.jsx";
+import { CartProvider } from "./context/CartContext";
 
 
 
 function App() {
   return (
     //  <FashoinJewellery />
-    <BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
 
-      <ScrollToTop />
-      <Routes>
-        {/* All routes inside Layout will show the Navbar and Footer */}
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/createaccount" element={<CreateAccount />} />
-          {/* <Route path="/cartview" element={<Cart />} /> */}
-          <Route path="/collections/:categoryName" element={<CollectionCategory />} />
-          <Route path="/product/:slug" element={<ProductView />} />
+        <ScrollToTop />
+        <Routes>
+          {/* All routes inside Layout will show the Navbar and Footer */}
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/createaccount" element={<CreateAccount />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/collections/:categoryName" element={<CollectionCategory />} />
+            <Route path="/product/:slug" element={<ProductView />} />
 
 
-          {/* Footer Routes */}
-          <Route path="/about" element={<About />} />
-          <Route path="/partner-onboarding" element={<PartnerOnBoarding />} />
-          <Route path="/contact" element={<Contact />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+            {/* Footer Routes */}
+            <Route path="/about" element={<About />} />
+            <Route path="/partner-onboarding" element={<PartnerOnBoarding />} />
+            <Route path="/contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

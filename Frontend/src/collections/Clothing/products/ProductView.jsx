@@ -2,16 +2,19 @@ import React, { useState, useEffect } from "react";
 import { Heart, Share2, Ruler } from "lucide-react";
 import { Products } from "../products/data/products.js"; // Ensure this path is correct
 import { useParams } from "react-router-dom";
+import { useCart } from "../../../hooks/useCart";
 
 const ProductView = () => {
   // 1. Get the dynamic ID or slug from the URL
   const { slug } = useParams();
+  const { addToCart } = useCart();
 
   const [product, setProduct] = useState(null);
   const [activeImage, setActiveImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState("");
   const [qty, setQty] = useState(1);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(true);
+  const [addedToCart, setAddedToCart] = useState(false);
 
   useEffect(() => {
     // 2. Logic to find the clicked product
@@ -30,6 +33,26 @@ const ProductView = () => {
     // Always scroll to top when a new product loads
     window.scrollTo(0, 0);
   }, [slug]);
+
+  // Handle Add to Cart
+  const handleAddToCart = () => {
+    if (!selectedSize) {
+      alert("Please select a size before adding to cart");
+      return;
+    }
+
+    addToCart({
+      id: product.id,
+      name: product.title,
+      price: product.price,
+      image: product.images[0],
+      size: selectedSize,
+      qty: qty,
+    });
+
+    setAddedToCart(true);
+    setTimeout(() => setAddedToCart(false), 2000);
+  };
 
   // 3. Loading state if product isn't found yet
   if (!product) {
@@ -129,7 +152,16 @@ const ProductView = () => {
 
           {/* Buttons */}
           <div className="grid grid-cols-2 gap-4 mb-8">
-            <button className="bg-orange-500 text-white py-4 rounded-lg font-bold hover:bg-orange-600 transition-colors">ADD TO CART</button>
+            <button 
+              onClick={handleAddToCart}
+              className={`text-white py-4 rounded-lg font-bold transition-all ${
+                addedToCart
+                  ? "bg-green-500 hover:bg-green-600"
+                  : "bg-orange-500 hover:bg-orange-600"
+              }`}
+            >
+              {addedToCart ? "✓ ADDED" : "ADD TO CART"}
+            </button>
             <button className="bg-black text-white py-4 rounded-lg font-bold hover:bg-gray-800 transition-colors">BUY NOW</button>
           </div>
 
