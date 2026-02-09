@@ -1,10 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
 const FREE_SHIPPING_LIMIT = 5000;
 
 const Checkout = () => {
-  const { cartItems, getTotalPrice } = useContext(CartContext);
+  const { cartItems, getTotalPrice, clearCart } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  // Form references
+  const firstNameRef = useRef("");
+  const lastNameRef = useRef("");
+  const emailRef = useRef("");
+  const phoneRef = useRef("");
+  const addressRef = useRef("");
+  const cityRef = useRef("");
+  const postalcodeRef = useRef("");
+
   const totalAmount = getTotalPrice();
   const shippingCost = totalAmount >= FREE_SHIPPING_LIMIT ? 0 : 100;
   const finalTotal = totalAmount + shippingCost;
@@ -15,15 +27,44 @@ const Checkout = () => {
       return;
     }
 
-    // TODO: Integrate payment gateway here
-    console.log("Order Details:", {
-      items: cartItems,
-      subtotal: totalAmount,
-      shipping: shippingCost,
-      total: finalTotal,
-    });
+    // Validate form
+    if (
+      !firstNameRef.current.value ||
+      !lastNameRef.current.value ||
+      !emailRef.current.value ||
+      !phoneRef.current.value ||
+      !addressRef.current.value ||
+      !cityRef.current.value ||
+      !postalcodeRef.current.value
+    ) {
+      alert("Please fill all the required fields");
+      return;
+    }
 
-    alert("Order placed successfully! 🎉");
+    // Generate Order ID
+    const orderId = `OKHAI${Date.now()}${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+
+    // Create Order Data
+    const orderData = {
+      orderId: orderId,
+      items: cartItems,
+      totalAmount: totalAmount,
+      shippingCost: shippingCost,
+      finalTotal: finalTotal,
+      email: emailRef.current.value,
+      phone: phoneRef.current.value,
+      address: `${addressRef.current.value}, ${cityRef.current.value}, ${postalcodeRef.current.value}`,
+      customerName: `${firstNameRef.current.value} ${lastNameRef.current.value}`,
+      orderDate: new Date().toISOString(),
+    };
+
+    console.log("Order Placed:", orderData);
+
+    // Clear the cart
+    clearCart();
+
+    // Navigate to tracking page with order data
+    navigate("/tracking", { state: { order: orderData } });
   };
 
   const handleBackToCart = () => {
@@ -88,12 +129,14 @@ const Checkout = () => {
               <form className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <input
+                    ref={firstNameRef}
                     type="text"
                     placeholder="First Name"
                     className="border px-4 py-2 rounded"
                     required
                   />
                   <input
+                    ref={lastNameRef}
                     type="text"
                     placeholder="Last Name"
                     className="border px-4 py-2 rounded"
@@ -102,6 +145,7 @@ const Checkout = () => {
                 </div>
 
                 <input
+                  ref={emailRef}
                   type="email"
                   placeholder="Email"
                   className="w-full border px-4 py-2 rounded"
@@ -109,6 +153,7 @@ const Checkout = () => {
                 />
 
                 <input
+                  ref={phoneRef}
                   type="tel"
                   placeholder="Phone Number"
                   className="w-full border px-4 py-2 rounded"
@@ -116,6 +161,7 @@ const Checkout = () => {
                 />
 
                 <input
+                  ref={addressRef}
                   type="text"
                   placeholder="Address"
                   className="w-full border px-4 py-2 rounded"
@@ -124,12 +170,14 @@ const Checkout = () => {
 
                 <div className="grid grid-cols-2 gap-4">
                   <input
+                    ref={cityRef}
                     type="text"
                     placeholder="City"
                     className="border px-4 py-2 rounded"
                     required
                   />
                   <input
+                    ref={postalcodeRef}
                     type="text"
                     placeholder="Postal Code"
                     className="border px-4 py-2 rounded"
