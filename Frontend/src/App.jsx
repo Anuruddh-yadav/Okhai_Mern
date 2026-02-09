@@ -3,20 +3,25 @@ import Layout from "./Layout";
 import ScrollToTop from "./ScrollToTop";
 import Home from "./Home/Home.jsx";
 import CollectionCategory from "./All_Products/Collection.jsx";
-import NavbarSlider from "./navbar/NavbarSlider.jsx";
-//import Cart from "./Cart/Cart.jsx"
-import ProductView from "./collections/Clothing/products/ProductView.jsx";
-//My al clothing page
-import CollectionColthing from "./All_Products/Collection.jsx";
+import About from "./Footer/About.jsx"; 
+import PartnerOnBoarding from "./Footer/PartnerOnBoarding.jsx"; 
+import Contact from "./Footer/Contact.jsx"; 
+import CreateAccount from "./Home/CreateAccount.jsx";
 
+// import Navbar from "./navbar/Navbar";
+// import Footer from "./Footer/Footer";
+// import NavbarSlider from "./navbar/NavbarSlider";
 
 function App() {
   return (
     <BrowserRouter>
-    <ProductView />
-      {/*<Routes>
-
-         Layout route 
+    {/* <NavbarSlider/>
+    <Navbar />
+    <CreateAccount />
+    <Footer /> */}
+    <ScrollToTop />
+      <Routes>
+        {/* All routes inside Layout will show the Navbar and Footer */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/collections/:type" element={<CollectionCategory />} />
