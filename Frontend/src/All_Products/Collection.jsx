@@ -110,7 +110,7 @@ const Collection = () => {
 
 
   const ProductType = [
-    { id: "1", title: "Apparel" },
+    { id: "1", title: "Apparel", },
     { id: "2", title: "Dress" },
     { id: "3", title: "Kurta" },
     { id: "4", title: "Top" },
@@ -166,33 +166,61 @@ const Collection = () => {
   const { categoryName } = useParams();
 
   // --- 1. UPDATED FILTER LOGIC (Includes Price, Size, Material, etc.) ---
-  const finalFilteredProducts = Products.filter(product => {
-    // URL Category Filter
-    const dbType = product.productType?.toLowerCase() || "";
-    const urlType = categoryName?.toLowerCase() || "";
-    const matchesCategory = dbType.includes(urlType) || urlType.includes(dbType);
+  // --- 1. FILTER LOGIC ---
+  // --- 1. FILTER LOGIC ---
+  const filteredProducts = Products.filter(product => {
+    // 1. URL Category Filter
+    const urlCategory = categoryName?.toLowerCase() || "";
+    const matchesCategory = !categoryName || product.productType?.some(type => {
+      const formattedType = type.toLowerCase();
+      return formattedType === urlCategory ||
+        urlCategory === `${formattedType}s` ||
+        urlCategory.replace(/-/g, ' ') === formattedType ||
+        urlCategory.replace(/-/g, ' ') === `${formattedType}s`;
+    });
 
-    // Price Filter
+    // 2. Price Filter
     let matchesPrice = true;
     if (selectedRange) {
+      // Handling the "Above 10000" case where max is very high
       const [min, max] = selectedRange.split("-").map(Number);
       matchesPrice = product.price >= min && product.price <= max;
     }
 
-    // Sidebar Filters (Only filter if something is selected)
-    const matchesType = selectedTypes.length === 0 || selectedTypes.includes(product.productType);
-    const matchesSize = selectedSizes.length === 0 || product.sizes?.some(s => selectedSizes.includes(s));
-    const matchesMaterial = selectedMaterial.length === 0 || selectedMaterial.includes(product.material?.toLowerCase());
-    const matchesOcassion = selectedOcassion.length === 0 || selectedOcassion.includes(product.occasion?.toLowerCase());
-    const matchesGender = selectedGender.length === 0 || selectedGender.includes(product.gender);
-    const matchesFit = selectedFit.length === 0 || selectedFit.includes(product.fit?.toLowerCase());
+    // 3. Sidebar Filters
+    // We use .toLowerCase() on BOTH sides to ensure "Women" matches "women"
+    const matchesType = selectedTypes.length === 0 ||
+      product.productType?.some(t => selectedTypes.map(st => st.toLowerCase()).includes(t.toLowerCase()));
 
+    const matchesSize = selectedSizes.length === 0 ||
+      product.sizes?.some(s => selectedSizes.includes(s));
+
+    const matchesMaterial = selectedMaterial.length === 0 ||
+      product.material?.some(m => selectedMaterial.map(sm => sm.toLowerCase()).includes(m.toLowerCase()));
+
+    const matchesOcassion = selectedOcassion.length === 0 ||
+      product.occasion?.some(o => selectedOcassion.map(so => so.toLowerCase()).includes(o.toLowerCase()));
+
+    // FIX: Added toLowerCase() here to match your GenderType data
+    const matchesGender = selectedGender.length === 0 ||
+      selectedGender.map(g => g.toLowerCase()).includes(product.gender?.toLowerCase());
+
+    const matchesFit = selectedFit.length === 0 ||
+      selectedFit.map(f => f.toLowerCase()).includes(product.fit?.toLowerCase());
+
+    // IMPORTANT: The final check
     return matchesCategory && matchesPrice && matchesType && matchesSize &&
       matchesMaterial && matchesOcassion && matchesGender && matchesFit;
   });
-
   // --- 2. SORTING LOGIC ---
-  
+  const finalDisplayProducts = [...filteredProducts].sort((a, b) => {
+    if (sortBy === "Price: Low To High") return a.price - b.price;
+    if (sortBy === "Price: High To Low") return b.price - a.price;
+    if (sortBy === "New Arrivals") return b.id - a.id; // Newest ID first
+    return 0; // Featured
+  });
+
+
 
   return (
 
@@ -309,7 +337,7 @@ const Collection = () => {
             }
             </div>
           }
-         
+
 
           {/* Material    Material    Material*/}
           <div
@@ -436,49 +464,65 @@ const Collection = () => {
 
       {/* PRODUCTS main content */}
       <main className="flex-1 ml-10">
-        {/* here the product no and sorting will be displayed  */}
-        {/* <div>
+        {/* Header Section: Product Count and Sorting Dropdown */}
+        <div className="flex justify-between items-center mb-8 pb-4 border-b border-gray-100">
+          {/* Dynamic Product Count */}
           <div className="text-gray-600 font-medium">
-            {sortedProducts.length} Products
+            {finalDisplayProducts.length} Products Found
           </div>
-          
-        </div> */}
-        {finalFilteredProducts.length > 0 ? (
+
+          {/* Sorting Dropdown */}
+          <div className="flex items-center gap-2">
+            <span className="text-xs uppercase tracking-widest text-gray-400 font-semibold">Sort By:</span>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bg-transparent border-none text-sm font-bold text-gray-800 focus:outline-none cursor-pointer uppercase tracking-tighter"
+            >
+              <option value="Featured">Featured</option>
+              <option value="New Arrivals">New Arrivals</option>
+              <option value="Price: Low To High">Price: Low To High</option>
+              <option value="Price: High To Low">Price: High To Low</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Product Grid */}
+        {finalDisplayProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-10">
-            {finalFilteredProducts.map((product) => (
+            {finalDisplayProducts.map((product) => (
               <Link
                 key={product.id}
-                to={`/collections/${product.productType}/${product.id}`}
+                to={'/product/${product.id}'} // Use slug here to match your route
               >
+
                 <ProductCard
                   id={product.id}
-                  img={product.images[0]} // Dynamic image from DB
+                  img={product.images[0]} // Correctly pulls first image from array
                   title={product.title}
                   price={product.price}
                 />
               </Link>
+
             ))}
           </div>
         ) : (
-          /* --- 3. PRODUCT NOT FOUND MESSAGE --- */
+          /* --- PRODUCT NOT FOUND MESSAGE --- */
           <div className="flex flex-col items-center justify-center py-20 text-center">
             <h2 className="text-2xl font-serif text-gray-800 mb-2">No products found</h2>
             <p className="text-gray-500 mb-6">Try adjusting your filters to find what you're looking for.</p>
             <button
               onClick={resetAllFilters}
-              className="px-6 py-2 bg-[#B48B39] text-white font-bold hover:bg-black transition-colors"
+              className="px-6 py-2 bg-[#B48B39] text-white font-bold hover:bg-yellow-600 transition-colors"
             >
-              Clear All Filters
+              No Product in Stock
             </button>
           </div>
         )}
       </main>
-    </section>
+    </section >
 
   );
 };
 
 export default Collection;
-
-
-

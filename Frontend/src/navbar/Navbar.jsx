@@ -50,8 +50,8 @@ import Cloth1 from "./navbar_assets/Clothing/clothing1.png"
 import Cloth2 from "./navbar_assets/Clothing/clothing2.png"
 
 //see All 
-import SeeImage1  from "./navbar_assets/SellAll/seeAll1.png"
-import SeeImage2  from "./navbar_assets/SellAll/seeAll2.png"
+import SeeImage1 from "./navbar_assets/SellAll/seeAll1.png"
+import SeeImage2 from "./navbar_assets/SellAll/seeAll2.png"
 
 const Navbar = ({ onCartClick }) => {
 
@@ -73,266 +73,266 @@ const Navbar = ({ onCartClick }) => {
 
 
     const women = [
-        { id: "1", title: "All Clothing" },
-    { id: "2", title: "New Arrivals" },
-    { id: "3", title: "Kurtas" },
-    { id: "4", title: "Kurtas & Kurta Sets" },
-    { id: "5", title: "Tops & Blouses" },
-    { id: "6", title: "Jackets & Blazers" },
-    { id: "7", title: "Kaftans" },
-    { id: "8", title: "Bottom Wear" },
-    { id: "9", title: "Dupattas, Scarfs & Stoles" },
-    { id: "10", title: "Night Suits" },
+        { id: "1", title: "All Clothing", l_url:"all-clothing" },
+        { id: "2", title: "New Arrivals", l_url: "new-arrival" },
+        { id: "3", title: "Kurtas", l_url: "kurtas" },
+        { id: "4", title: "Kurtas & Kurta Sets", l_url: "kurtas-kurta-sets" },
+        { id: "5", title: "Tops & Blouses", l_url: "tops-blouses" },
+        { id: "6", title: "Jackets & Blazers", l_url: "jackets-blazers" },
+        { id: "7", title: "Kaftans", l_url: "kaftans" },
+        { id: "8", title: "Bottom Wear", l_url: "bottom-wear" },
+        { id: "9", title: "Dupattas, Scarfs & Stoles", l_url: "dupattas-scarfs-stoles" },
+        { id: "10", title: "Night Suits", l_url: "night-suits" },
     ]
     const Men = [
-        { id: "1", title: "Kurta" },
-        { id: "2", title: "Shirts" },
-        { id: "3", title: "Ties" },
-        { id: "4", title: "Shorts" },
+        { id: "1", title: "Kurta" , l_url: "kurta" },
+        { id: "2", title: "Shirts", l_url: "shirts" },
+        { id: "3", title: "Ties", l_url: "ties" },
+        { id: "4", title: "Shorts", l_url: "shorts" },
     ]
     const Kids = [
-        { id: "1", title: "Kids Clothing" },
-        { id: "2", title: "Furnishing" },
-        { id: "3", title: "Kids Winterwear" },
+        { id: "1", title: "Kids Clothing", l_url: "kids-clothing" },
+        { id: "2", title: "Furnishing", l_url: "furnishing" },
+        { id: "3", title: "Kids Winterwear", l_url: "kids-winterwear" },
     ]
     const Crafts = [
-        { id: "1", title: "Mirror Work" },
-        { id: "2", title: "Applique" },
-        { id: "3", title: "Hand Embroidered" },
-        { id: "4", title: "Ikat" },
-        { id: "5", title: "Suf Embroidery" },
-        { id: "6", title: "Ajrakh" },
-        { id: "7", title: "Neela - Indigo" },
-        { id: "8", title: "Tie & Dye" },
-        { id: "9", title: "Mukaish" },
-        { id: "10", title: "Handblock Print" },
-        { id: "11", title: "Hand Painted - Apparel" },
-        { id: "12", title: "Gota Patti" },
-        { id: "13", title: "Kalamkari" },
-        { id: "14", title: "Jamdani" },
-        { id: "15", title: "Karzobi" },
-        { id: "16", title: "Crochet" },
-        { id: "17", title: "Noor - Chikankari" },
-        { id: "18", title: "Aari Work" },
-        { id: "19", title: "One of a Kind - Samples" },
-        { id: "20", title: "Best seller" },
+        { id: "1", title: "Mirror Work" , l_url: "mirror-work" },
+        { id: "2", title: "Applique", l_url: "applique" },
+        { id: "3", title: "Hand Embroidered", l_url: "hand-embroidered" },
+        { id: "4", title: "Ikat", l_url: "ikat" },
+        { id: "5", title: "Suf Embroidery", l_url: "suf-embroidery" },
+        { id: "6", title: "Ajrakh", l_url: "ajrakh" },
+        { id: "7", title: "Neela - Indigo", l_url: "neela-indigo" },
+        { id: "8", title: "Tie & Dye", l_url: "tie-dye" },
+        { id: "9", title: "Mukaish", l_url: "mukaish" },
+        { id: "10", title: "Handblock Print", l_url: "handblock-print" },
+        { id: "11", title: "Hand Painted - Apparel", l_url: "hand-painted-apparel" },
+        { id: "12", title: "Gota Patti", l_url: "gota-patti" },
+        { id: "13", title: "Kalamkari", l_url: "kalamkari" },
+        { id: "14", title: "Jamdani", l_url: "jamdani" },
+        { id: "15", title: "Karzobi", l_url: "karzobi" },
+        { id: "16", title: "Crochet", l_url:"crochet" },
+        { id: "17", title: "Noor - Chikankari", l_url: "noor-chikankari" },
+        { id: "18", title: "Aari Work", l_url: "aari-work" },
+        { id: "19", title: "One of a Kind - Samples", l_url: "one-of-a-kind-samples" },
+        { id: "20", title: "Best seller", l_url: "best-seller" },
     ]
     const Kurtas = [
-        { id: "1", title: "Hand Painted Kurta" },
-        { id: "2", title: "Straight Kurta" },
-        { id: "3", title: "Hand Printed Kurtas & Sets" },
-        { id: "4", title: "Sleeveless Kurtas & Sets" },
+        { id: "1", title: "Hand Painted Kurta", l_url: "hand-painted-kurta" },
+        { id: "2", title: "Straight Kurta", l_url: "straight-kurta" },
+        { id: "3", title: "Hand Printed Kurtas & Sets", l_url: "hand-printed-kurtas-sets" },
+        { id: "4", title: "Sleeveless Kurtas & Sets", l_url: "sleeveless-kurtas-sets" },
     ]
     const Saree = [
-        { id: "1", title: "Ajrakh" },
-        { id: "2", title: "Hand Painted" },
-        { id: "3", title: "Handblock Printed" },
-        { id: "4", title: "Handwoven" },
-        { id: "5", title: "Chikankari" },
+        { id: "1", title: "Ajrakh", l_url: "ajrakh" },
+        { id: "2", title: "Hand Painted", l_url: "hand-painted" },
+        { id: "3", title: "Handblock Printed", l_url: "handblock-printed" },
+        { id: "4", title: "Handwoven", l_url: "handwoven" },
+        { id: "5", title: "Chikankari", l_url: "chikankari" },
 
     ]
 
     const Accessary_Fashion_Jewellery = [
-        { id: "1", title: "Earrings" },
-        { id: "2", title: "Neckpieces" },
-        { id: "3", title: "Bracelets, Anklets & Rings" },
-        { id: "4", title: "All Jewellery" },
+        { id: "1", title: "Earrings", l_url: "earrings" },
+        { id: "2", title: "Neckpieces", l_url: "neckpieces" },
+        { id: "3", title: "Bracelets, Anklets & Rings", l_url: "bracelets-anklets-rings" },
+        { id: "4", title: "All Jewellery", l_url: "all-jewellery" },
     ]
     const Accessary_Bags = [
 
-        { id: "1", title: "Total Bags" },
-        { id: "2", title: "Beach Bags" },
-        { id: "3", title: "Laptop Bags" },
-        { id: "4", title: "Pouches" },
-        { id: "5", title: "Handbags" },
-        { id: "6", title: "Clutches and Potlis" },
-        { id: "7", title: "Bucket Bags" },
+        { id: "1", title: "Total Bags", l_url: "total-bags" },
+        { id: "2", title: "Beach Bags", l_url: "beach-bags" },
+        { id: "3", title: "Laptop Bags", l_url: "laptop-bags" },
+        { id: "4", title: "Pouches", l_url: "pouches" },
+        { id: "5", title: "Handbags", l_url: "handbags" },
+        { id: "6", title: "Clutches and Potlis", l_url: "clutches-and-potlis" },
+        { id: "7", title: "Bucket Bags", l_url: "bucket-bags" },
     ]
     const Accessary_Silver_Jewellery = [
-        { id: "1", title: "Earrings" },
-        { id: "2", title: "Silver Neckpieces" },
-        { id: "3", title: "Silver Bracelets, Anklets & Rings" },
+        { id: "1", title: "Earrings", l_url: "earrings" },
+        { id: "2", title: "Silver Neckpieces", l_url: "silver-neckpieces" },
+        { id: "3", title: "Silver Bracelets, Anklets & Rings", l_url: "silver-bracelets-anklets-rings" },
     ]
     const Accessary_Collections = [
-        { id: "1", title: "Hand Embroidery" },
-        { id: "2", title: "Chrochet" },
-        { id: "3", title: "Dokra" },
-        { id: "4", title: "Black Pottery" },
-        { id: "5", title: "Upcycling and Recycling" },
+        { id: "1", title: "Hand Embroidery" , l_url: "hand-embroidery" },
+        { id: "2", title: "Chrochet", l_url: "crochet" ,},
+        { id: "3", title: "Dokra", l_url: "dokra" },
+        { id: "4", title: "Black Pottery", l_url: "black-pottery" },
+        { id: "5", title: "Upcycling and Recycling", l_url: "upcycling-and-recycling" },
     ]
     const Accessary_Other_accessories = [
-        { id: "1", title: "Key chains" },
-        { id: "2", title: "Aprons" },
-        { id: "3", title: "Dupattas" },
-        { id: "4", title: "Hair Accessories" },
-        { id: "5", title: "Hats" },
-        { id: "6", title: "Footwear" },
-        { id: "7", title: "Masks" },
-        { id: "8", title: "Stoles" },
-        { id: "9", title: "Winter Accessories" },
+        { id: "1", title: "Key chains", l_url: "key-chains" },
+        { id: "2", title: "Aprons", l_url: "aprons" },
+        { id: "3", title: "Dupattas", l_url: "dupattas" },
+        { id: "4", title: "Hair Accessories" , l_url: "hair-accessories" },
+        { id: "5", title: "Hats"    , l_url: "hats" },
+        { id: "6", title: "Footwear", l_url: "footwear" },
+        { id: "7", title: "Masks", l_url: "masks" },
+        { id: "8", title: "Stoles", l_url: "stoles" },
+        { id: "9", title: "Winter Accessories", l_url: "winter-accessories" },
     ]
     // Home 
     const Home_decors = [
-        { id: "1", title: "Lightings" },
-        { id: "2", title: "Planters & vases" },
-        { id: "3", title: "Seating" },
-        { id: "4", title: "Storage" },
-        { id: "5", title: "Table Tops" },
+        { id: "1", title: "Lightings", l_url: "lightings" },
+        { id: "2", title: "Planters & vases", l_url: "planters-vases" },
+        { id: "3", title: "Seating", l_url: "seating" },
+        { id: "4", title: "Storage", l_url: "storage" },
+        { id: "5", title: "Table Tops", l_url: "table-tops" },
     ]
     const Home_collections = [
-        { id: "1", title: "Hand Embroidery" },
-        { id: "2", title: "Basketry" },
-        { id: "3", title: "Handblock Print" },
-        { id: "4", title: "Macrame Home" },
-        { id: "5", title: "Crochet Home" },
-        { id: "6", title: "Hand Painting - Home" },
-        { id: "7", title: "Blue Pottery - Home" },
-        { id: "8", title: "Metal Craft - Home" },
+        { id: "1", title: "Hand Embroidery", l_url: "hand-embroidery" },
+        { id: "2", title: "Basketry", l_url: "basketry" },
+        { id: "3", title: "Handblock Print", l_url: "handblock-print" },
+        { id: "4", title: "Macrame Home", l_url: "macrame-home" },
+        { id: "5", title: "Crochet Home", l_url: "crochet-home" },
+        { id: "6", title: "Hand Painting - Home", l_url: "hand-painting-home" },
+        { id: "7", title: "Blue Pottery - Home", l_url: "blue-pottery-home" },
+        { id: "8", title: "Metal Craft - Home", l_url: "metal-craft-home" },
     ]
     const Home_decor = [
-        { id: "1", title: "Hoops" },
-        { id: "2", title: "Wall Hanging" },
-        { id: "3", title: "Wall Plates" },
+        { id: "1", title: "Hoops" , l_url: "hoops" },
+        { id: "2", title: "Wall Hanging"   ,l_url: "wall-hanging" },
+        { id: "3", title: "Wall Plates"  , l_url: "wall-plates" },
     ]
     const Home_Furnishing = [
-        { id: "1", title: "Basket" },
-        { id: "2", title: "Bed Covers" },
-        { id: "3", title: "Curtains" },
-        { id: "4", title: "Cushion Covers" },
-        { id: "5", title: "Rugs & Mats" },
-        { id: "6", title: "Throws And Quilts" },
-        { id: "7", title: "Utility Bags & Puches" }
+        { id: "1", title: "Basket" , l_url: "basket" },
+        { id: "2", title: "Bed Covers" , l_url: "bed-covers" },
+        { id: "3", title: "Curtains" , l_url: "curtains" },
+        { id: "4", title: "Cushion Covers" , l_url: "cushion-covers" },
+        { id: "5", title: "Rugs & Mats" , l_url: "rugs-mats" },
+        { id: "6", title: "Throws And Quilts" , l_url: "throws-quilts" },
+        { id: "7", title: "Utility Bags & Puches", l_url: "utility-bags-pouches" },
     ]
 
     const Kitchen_Dinning = [
-        { id: "1", title: "Apron" },
-        { id: "2", title: "Drinkware" },
-        { id: "3", title: "Kitchenware" },
-        { id: "4", title: "Serveware" },
-        { id: "5", title: "Table Linen" },
-        { id: "6", title: "Trays and Platters" },
-        { id: "7", title: "Bath" },
+        { id: "1", title: "Apron", l_url: "apron" },
+        { id: "2", title: "Drinkware", l_url: "drinkware" },
+        { id: "3", title: "Kitchenware", l_url: "kitchenware" },
+        { id: "4", title: "Serveware", l_url: "serveware" },
+        { id: "5", title: "Table Linen", l_url: "table-linen" },
+        { id: "6", title: "Trays and Platters", l_url: "trays-platters" },
+        { id: "7", title: "Bath" , l_url: "bath" },
     ]
 
     // Gifting
 
     const Gifting_Artisanal = [
-        { id: "1", title: "Ajrakh" },
-        { id: "2", title: "Hand Painted" },
-        { id: "3", title: "Handblock Printed" },
-        { id: "4", title: "Handwoven" },
-        { id: "5", title: "Chikankari" },
+        { id: "1", title: "Ajrakh" , l_url: "ajrakh" },
+        { id: "2", title: "Hand Painted", l_url: "hand-painted" },
+        { id: "3", title: "Handblock Printed", l_url: "handblock-printed" },
+        { id: "4", title: "Handwoven", l_url: "handwoven" },
+        { id: "5", title: "Chikankari", l_url: "chikankari" },
     ]
     const Gifting_Embroidery = [
-        { id: "1", title: "Okhai" },
-        { id: "2", title: "Shrujan" },
-        { id: "3", title: "Porgai" },
-        { id: "4", title: "Urmul" },
-        { id: "5", title: "Bebaak" },
-        { id: "6", title: "Onset Homes" },
-        { id: "7", title: "Dhaga HandCraft" },
-        { id: "8", title: "Sadhna" },
-        { id: "9", title: "Whitewater Kids" },
-        { id: "10", title: "Rangsutra" },
-        { id: "11", title: "Leera" },
-        { id: "12", title: "Chambray" },
-        { id: "13", title: "Soleilclo" },
-        { id: "14", title: "Samuday Craft" },
+        { id: "1", title: "Okhai", l_url: "okhai" },
+        { id: "2", title: "Shrujan", l_url: "shrujan" },
+        { id: "3", title: "Porgai", l_url: "porgai" },
+        { id: "4", title: "Urmul", l_url: "urmul" },
+        { id: "5", title: "Bebaak", l_url: "bebaak" },
+        { id: "6", title: "Onset Homes", l_url: "onset-homes" },
+        { id: "7", title: "Dhaga HandCraft", l_url: "dhaga-handcraft" },
+        { id: "8", title: "Sadhna", l_url: "sadhna" },
+        { id: "9", title: "Whitewater Kids" , l_url: "whitewater-kids" },
+        { id: "10", title: "Rangsutra", l_url: "rangsutra" },
+        { id: "11", title: "Leera", l_url: "leera" },
+        { id: "12", title: "Chambray", l_url: "chambray" },
+        { id: "13", title: "Soleilclo", l_url: "soleilclo" },
+        { id: "14", title: "Samuday Craft", l_url: "samuday-craft" },
 
     ]
     const Gifting_Metal_Craft = [
-        { id: "1", title: "Studio Coppre" },
-        { id: "2", title: "Anantaya Decor" },
+        { id: "1", title: "Studio Coppre", l_url: "studio-coppre" },
+        { id: "2", title: "Anantaya Decor", l_url: "anantaya-decor" },
     ]
     const Gifting_ChikanKari = [
-        { id: "1", title: "Phae" },
-        { id: "2", title: "Shwet" },
+        { id: "1", title: "Phae", l_url: "phae" },
+        { id: "2", title: "Shwet", l_url: "shwet" },
     ]
     const Gifting_Basketry = [
-        { id: "1", title: "Skadam Haat" },
-        { id: "2", title: "Kraftribe" },
-        { id: "3", title: "Pine Cone" },
+        { id: "1", title: "Skadam Haat", l_url: "skadam-haat" },
+        { id: "2", title: "Kraftribe", l_url: "kraftribe" },
+        { id: "3", title: "Pine Cone", l_url: "pine-cone" },
     ]
     const Gifting_Eco_printing = [
-        { id: "1", title: "Mulya" },
-        { id: "2", title: "Bageeya" }
+        { id: "1", title: "Mulya", l_url: "mulya" },
+        { id: "2", title: "Bageeya", l_url: "bageeya" }
     ]
     const Gifting_Handblock_Printing = [
-        { id: "1", title: "Sooti Syahi" },
-        { id: "2", title: "Creative Bee" },
-        { id: "3", title: "Kirgiti" },
-        { id: "4", title: "Shuddhi" },
-        { id: "5", title: "Dharan" },
-        { id: "6", title: "Poddar Export" },
-        { id: "7", title: "Ektara" },
-        { id: "8", title: "Inkriti" },
+        { id: "1", title: "Sooti Syahi", l_url: "sooti-syahi" },
+        { id: "2", title: "Creative Bee", l_url: "creative-bee" },
+        { id: "3", title: "Kirgiti", l_url: "kirgiti" },
+        { id: "4", title: "Shuddhi", l_url: "shuddhi" },
+        { id: "5", title: "Dharan", l_url: "dharan" },
+        { id: "6", title: "Poddar Export", l_url: "poddar-export" },
+        { id: "7", title: "Ektara", l_url: "ektara" },
+        { id: "8", title: "Inkriti", l_url: "inkriti" },
     ]
     const Gifting_Ajrakh = [
-        { id: "1", title: "Tenrao by Riyaz Khatri" },
-        { id: "2", title: "Jahagir Khatri" },
-        { id: "3", title: "Jabbar khatri" },
-        { id: "4", title: "Okhai" },
+        { id: "1", title: "Tenrao by Riyaz Khatri", l_url: "tenrao-by-riyaz-khatri" },
+        { id: "2", title: "Jahagir Khatri", l_url: "jahagir-khatri" },
+        { id: "3", title: "Jabbar khatri", l_url: "jabbar-khatri" },
+        { id: "4", title: "Okhai", l_url: "okhai" },
     ]
     const Gifting_Upcycling_Recycling = [
-        { id: "1", title: "Lukka Chuppi" },
-        { id: "2", title: "Whe by Abira" },
-        { id: "3", title: "Patch over Patch" },
-        { id: "4", title: "The Good Doll" },
-        { id: "5", title: "Swatanya" },
-        { id: "6", title: "Nimmit Creations" },
+        { id: "1", title: "Lukka Chuppi", l_url: "lukka-chuppi" },
+        { id: "2", title: "Whe by Abira", l_url: "whe-by-abira" },
+        { id: "3", title: "Patch over Patch", l_url: "patch-over-patch" },
+        { id: "4", title: "The Good Doll", l_url: "the-good-doll" },
+        { id: "5", title: "Swatanya", l_url: "swatanya" },
+        { id: "6", title: "Nimmit Creations", l_url: "nimmit-creations" },
 
     ]
     const Gifting_Terracotta = [
-        { id: "1", title: "Terracotta by sachi" },
-        { id: "2", title: "Antarang" },
+        { id: "1", title: "Terracotta by sachi", l_url: "terracotta-by-sachi" },
+        { id: "2", title: "Antarang", l_url: "antarang" },
     ]
     const Gifting_games = [
-        { id: "1", title: "Forggmag" },
-        { id: "2", title: "Potli" }
+        { id: "1", title: "Forggmag", l_url: "forggmag" },
+        { id: "2", title: "Potli", l_url: "potli" }
     ]
     const Gifting_Hand_Weaving = [
-        { id: "1", title: "Sirohi" },
-        { id: "2", title: "Handweave India" },
-        { id: "3", title: "Craftoons" },
-        { id: "4", title: "Avani Kumaon" },
-        { id: "5", title: "Punarjeevana" },
-        { id: "6", title: "India Craft House" },
-        { id: "7", title: "Moralfibre" },
-        { id: "8", title: "VWas" },
-        { id: "9", title: "Sikki Grass" },
-        { id: "10", title: "Dharini" },
-        { id: "11", title: "Senses Play" },
-        { id: "12", title: "Looms of Ladakh" },
-        { id: "13", title: "Bunkar Bihar" },
-        { id: "14", title: "Gramya" },
-        { id: "15", title: "Myraa" },
-        { id: "16", title: "Fifth Origins" },
+        { id: "1", title: "Sirohi", l_url: "sirohi" },
+        { id: "2", title: "Handweave India", l_url: "handweave-india" },
+        { id: "3", title: "Craftoons", l_url: "craftoons" },
+        { id: "4", title: "Avani Kumaon", l_url: "avani-kumaon" },
+        { id: "5", title: "Punarjeevana", l_url: "punarjeevana" },
+        { id: "6", title: "India Craft House", l_url: "india-craft-house" },
+        { id: "7", title: "Moralfibre", l_url: "moralfibre" },
+        { id: "8", title: "VWas", l_url: "vwas" },
+        { id: "9", title: "Sikki Grass", l_url: "sikki-grass" },
+        { id: "10", title: "Dharini", l_url: "dharini" },
+        { id: "11", title: "Senses Play", l_url: "senses-play" },
+        { id: "12", title: "Looms of Ladakh", l_url: "looms-of-ladakh" },
+        { id: "13", title: "Bunkar Bihar", l_url: "bunkar-bihar" },
+        { id: "14", title: "Gramya", l_url: "gramya" },
+        { id: "15", title: "Myraa", l_url: "myraa" },
+        { id: "16", title: "Fifth Origins", l_url:"fifth-origins" },
     ]
     const Gifting_Blue_Pottery = [
-        { id: "1", title: "Gopal Saini" },
+        { id: "1", title: "Gopal Saini", l_url: "gopal-saini" },
     ]
     const Gifting_Ceramics = [
-        { id: "1", title: "Ikai Asai" },
+        { id: "1", title: "Ikai Asai", l_url: "ikai-asai" },
     ]
     const Gifting_Tie_Die = [
-        { id: "1", title: "Murva Colective" },
+        { id: "1", title: "Murva Colective", l_url: "murva-colective" },
     ]
     const Gifting_Candles_and_Perfumes = [
-        { id: "1", title: "Boond Fragrances" },
+        { id: "1", title: "Boond Fragrances", l_url: "boond-fragrances" },
     ]
 
     // SEE  all 
-    const see_all =[
-      {id:"1" , title:"Sale - Kurtas"},
-      {id:"2" , title:"Sale - Kurta Pant Sets"},
-      {id:"3" , title:"Sale - Dresses"},
-      {id:"4" , title:"Sale - Cushion Covers"},
-      {id:"5" , title:"Sale - Bomber Jacket"},
-      {id:"6" , title:"Sale - Tops"},
-      {id:"7" , title:"Sale - Basketry"},
-      {id:"8" , title:"Sale All Apparles"},
-      {id:"9" , title:"Rescue"},
-      {id:"10" , title:"Sample Sale"},
+    const see_all = [
+        { id: "1", title: "Sale - Kurtas", l_url: "sale-kurtas" },
+        { id: "2", title: "Sale - Kurta Pant Sets", l_url: "sale-kurta-pant-sets" },
+        { id: "3", title: "Sale - Dresses", l_url: "sale-dresses" },
+        { id: "4", title: "Sale - Cushion Covers", l_url: "sale-cushion-covers" },
+        { id: "5", title: "Sale - Bomber Jacket", l_url: "sale-bomber-jacket" },
+        { id: "6", title: "Sale - Tops", l_url: "sale-tops" },
+        { id: "7", title: "Sale - Basketry", l_url: "sale-basketry" },
+        { id: "8", title: "Sale All Apparles", l_url: "sale-all-apparles" },
+        { id: "9", title: "Rescue", l_url: "rescue" },
+        { id: "10", title: "Sample Sale", l_url: "sample-sale" },
     ];
 
 
@@ -340,22 +340,22 @@ const Navbar = ({ onCartClick }) => {
     // 1. Accept the prop
 
     // ... existing logic
-    
-       <div className="flex items-center gap-4"> 
-           {/* ... other icons like User, Search ... */}
 
-           {/* UPDATE THE CART ICON SECTION */}
-           {/* If it was a Link, change it to a button or div */}
-           <div 
-               className="cursor-pointer relative" 
-               onClick={onCartClick} // <--- Trigger the popup
-           >
-               <img src={Cart} alt="Cart" className="w-5 min-w-5" />
-               <p className="w-4 absolute bottom-[-4px] right-[-4px] ...">0</p>
-           </div>
-           
-           {/* ... */}
-       </div>
+    <div className="flex items-center gap-4">
+        {/* ... other icons like User, Search ... */}
+
+        {/* UPDATE THE CART ICON SECTION */}
+        {/* If it was a Link, change it to a button or div */}
+        <div
+            className="cursor-pointer relative"
+            onClick={onCartClick} // <--- Trigger the popup
+        >
+            <img src={Cart} alt="Cart" className="w-5 min-w-5" />
+            <p className="w-4 absolute bottom-[-4px] right-[-4px] ...">0</p>
+        </div>
+
+        {/* ... */}
+    </div>
 
 
 
@@ -384,11 +384,11 @@ const Navbar = ({ onCartClick }) => {
                             className="px-1 h-9 cursor-pointer py-2"
                         />
                         <Link to="createaccount">
-                        <img
-                            src={User}
-                            alt="User"
-                            className="px-1 h-9 cursor-pointer  py-2"
-                        />
+                            <img
+                                src={User}
+                                alt="User"
+                                className="px-1 h-9 cursor-pointer  py-2"
+                            />
                         </Link>
                         <img
                             src={Heart}
@@ -524,7 +524,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li id={menu.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`collections/${menu.title}`}
+                                                to={`collections/${menu.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {menu.title}
@@ -542,7 +542,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li id={menu.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`collections/${menu.title}`}
+                                                to={`collections/${menu.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {menu.title}
@@ -560,7 +560,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li id={menu.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`collections/${menu.title}`}
+                                                to={`collections/${menu.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {menu.title}
@@ -578,7 +578,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li id={menu.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`collections/${menu.title}`}
+                                                to={`collections/${menu.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {menu.title}
@@ -633,7 +633,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`collections/${item.title}`}
+                                                    to={`collections/${item.l_url}`}
                                                 >
                                                     {item.title}
                                                 </Link>
@@ -708,7 +708,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections/${item.title}`}
+                                                    to={`/collections/${item.l_url}`}
                                                     className="hover:text-orange-500"
                                                 >
                                                     {item.title}
@@ -730,7 +730,7 @@ const Navbar = ({ onCartClick }) => {
 
                             {/* ---------- IMg 2  ---------- */}
                             <div className="flex flex-col" onClick={() => setActive(false)} >
-                                <Link to="/collections/ajrakh-sarees">
+                                <Link to="/collections/ajrakh">
                                     <img src={SareeMenuImg2} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                     <p className="text-center text-sm mt-2 cursor-pointer font-serif">Ajrakh Saarees</p>
                                 </Link>
@@ -739,7 +739,7 @@ const Navbar = ({ onCartClick }) => {
 
                             {/* ---------- Img 3 ---------- */}
                             <div className="flex flex-col" onClick={() => setActive(false)} >
-                                <Link to="/collections/madubani-sarees">
+                                <Link to="/collections/madubani">
                                     <img src={SareeMenuImg3} alt="Artisanal Tops" className="w-full h-auto object-cover cursor-pointer rounded" />
                                     <p className="text-center text-sm mt-2 cursor-pointer font-serif">Madubani Sarees</p>
                                 </Link>
@@ -778,7 +778,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id} >
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -794,7 +794,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                     className="hover:text-orange-500"
                                                 >
                                                     {item.title}
@@ -815,7 +815,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                 >
                                                     {item.title}
                                                 </Link>
@@ -830,7 +830,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                 >
                                                     {item.title}
                                                 </Link>
@@ -851,7 +851,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                 >
                                                     {item.title}
                                                 </Link>
@@ -920,7 +920,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-400"
                                             >
                                                 {item.title}
@@ -935,7 +935,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                     className="hover:text-orange-400"
                                                 >
                                                     {item.title}
@@ -953,7 +953,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -974,7 +974,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                     className="hover:text-orange-500"
                                                 >
                                                     {item.title}
@@ -996,7 +996,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                     className="hover:text-orange-500"
                                                 >
                                                     {item.title}
@@ -1138,7 +1138,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections//${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                     className="hover:text-orange-500"
                                                 >
                                                     {item.title}
@@ -1155,7 +1155,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                     className="hover:text-orange-500"
                                                 >
                                                     {item.title}
@@ -1171,7 +1171,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                     className="hover:text-orange-500"
                                                 >
                                                     {item.title}
@@ -1186,7 +1186,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1200,7 +1200,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1220,7 +1220,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1235,7 +1235,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1249,7 +1249,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1263,7 +1263,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1277,7 +1277,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1298,7 +1298,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1312,7 +1312,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1327,7 +1327,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1341,7 +1341,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1355,7 +1355,7 @@ const Navbar = ({ onCartClick }) => {
                                         <li key={item.id}>
                                             <Link
                                                 onClick={() => setActive(false)}
-                                                to={`/collections/${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                to={`/collections/${item.l_url}`}
                                                 className="hover:text-orange-500"
                                             >
                                                 {item.title}
@@ -1424,7 +1424,7 @@ const Navbar = ({ onCartClick }) => {
                                             <li key={item.id}>
                                                 <Link
                                                     onClick={() => setActive(false)}
-                                                    to={`/collections//${item.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                                    to={`/collections/${item.l_url}`}
                                                     className="hover:text-orange-500"
                                                 >
                                                     {item.title}
@@ -1434,7 +1434,7 @@ const Navbar = ({ onCartClick }) => {
 
                                     }
 
-                                    
+
 
                                 </ul>
                             </div>

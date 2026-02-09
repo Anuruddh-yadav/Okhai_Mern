@@ -1,117 +1,97 @@
 import React, { useState, useEffect } from "react";
 import { Heart, Share2, Ruler } from "lucide-react";
-import { allWomenProducts } from "./data/products"; // Adjust path as needed
+import { Products } from "../products/data/products.js"; // Ensure this path is correct
+import { useParams } from "react-router-dom";
 
 const ProductView = () => {
-  // Default to first product for standalone testing
-  const defaultProduct = allWomenProducts[0];
-  const [product, setProduct] = useState(defaultProduct);
+  // 1. Get the dynamic ID or slug from the URL
+  const { productId } = useParams();
+
+  const [product, setProduct] = useState(null);
   const [activeImage, setActiveImage] = useState(0);
-  const [selectedSize, setSelectedSize] = useState("M");
+  const [selectedSize, setSelectedSize] = useState("");
   const [qty, setQty] = useState(1);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(true);
 
-  // Simulate slug change for testing (optional)
-  const [testSlug, setTestSlug] = useState("okhai-hibiscus-hand-embroidered-pure-cotton-kurta");
-
   useEffect(() => {
-    // Load product based on test slug
-    const found = allWomenProducts.find(item => item.slug === testSlug);
+    // 2. Logic to find the clicked product
+    // We check against ID (converted to Number) or Slug depending on your Route setup
+    const found = Products.find(item =>
+      item.id === Number(productId) || item.slug === productId
+    );
+
     if (found) {
       setProduct(found);
       setActiveImage(0);
+      if (found.sizes && found.sizes.length > 0) {
+        setSelectedSize(found.sizes[0]); // Default to first available size
+      }
     }
-  }, []);
+    // Always scroll to top when a new product loads
+    window.scrollTo(0, 0);
+  }, [productId]);
 
+  // 3. Loading state if product isn't found yet
   if (!product) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen p-8">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Product Not Found</h2>
-        <p className="text-gray-600">No products available in the data.</p>
+      <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-50">
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">Finding your product...</h2>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-orange-500"></div>
       </div>
     );
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 font-sans text-gray-800 bg-gray-50 min-h-screen">
-      
-      {/* Breadcrumbs */}
+    <section className="max-w-7xl mx-auto px-4 md:px-8 py-32 font-sans text-gray-800 bg-gray-50 min-h-screen">
+
+      {/* Breadcrumbs - uses product.title to match your data */}
       <div className="text-xs text-gray-500 mb-8 uppercase tracking-wide">
-        Home / Clothing / <span className="text-gray-900 font-medium">{product.name}</span>
+        Home / Clothing / <span className="text-gray-900 font-medium">{product.title}</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-        
+
         {/* LEFT: IMAGE GALLERY */}
-<div className="space-y-6">
-  {/* Main Image - FIXED CROPPING */}
-  <div className="relative bg-linear-to-br from-orange-50 to-pink-50 rounded-xl shadow-sm overflow-hidden min-h-112.5 md:min-h-137.5 lg:min-h-162.5">
-    <div className="w-full h-125 md:h-150 lg:h-175 flex items-start justify-center p-8 md:p-12">
-      <img
-        src={product.images[activeImage]}
-        alt={product.name}
-        className="w-full h-full object-contain max-w-full max-h-full" 
-        // ↑ Changed from object-cover to object-contain
-      />
-    </div>
-    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-3 rounded-2xl shadow-xl cursor-pointer hover:bg-white border">
-      <span className="text-2xl">🔍</span>
-    </div>
-  </div>
-
-  {/* Thumbnails - ALSO FIXED */}
-  <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300">
-    {product.images.map((img, i) => (
-      <div
-        key={i}
-        className={`shrink-0 w-20 h-24 md:w-24 md:h-32 rounded-xl overflow-hidden cursor-pointer border-4 transition-all hover:scale-105 shadow-sm ${
-          activeImage === i 
-            ? "border-orange-500 shadow-orange-200" 
-            : "border-transparent hover:border-orange-300 hover:shadow-md"
-        }`}
-        onClick={() => setActiveImage(i)}
-      >
-        <div className="w-full h-full p-1 flex items-center justify-center">
-          <img
-            src={img}
-            alt={`Thumbnail ${i + 1}`}
-            className="w-full h-full object-contain max-w-full max-h-full" 
-            // ↑ Changed from object-cover to object-contain
-          />
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
-
-
-        {/* RIGHT: PRODUCT DETAILS (Sticky) */}
-        <div className="lg:sticky lg:top-24 self-start">
-          
-          {/* Product Title */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-medium leading-tight mb-4">
-            {product.name}
-          </h1>
-
-          {/* Rating */}
-          <div className="flex items-center gap-2 mb-6">
-            <div className="flex text-yellow-400 text-lg">
-              {"★".repeat(product.rating)}
-              {"☆".repeat(5 - product.rating)}
+        <div className="space-y-6">
+          <div className="relative bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+            <div className="w-full h-[500px] md:h-[600px] flex items-center justify-center p-4">
+              <img
+                src={product.images[activeImage]}
+                alt={product.title}
+                className="w-full h-full object-contain"
+              />
             </div>
-            <span className="text-sm text-gray-500">({product.reviews} reviews)</span>
           </div>
 
-          {/* Artisan Link */}
-          <div className="border-b border-gray-200 pb-6 mb-6">
-            <p className="text-sm text-gray-600 hover:text-orange-600 cursor-pointer">
-              View more from this artisan →
-            </p>
+          {/* Thumbnails */}
+          <div className="flex gap-3 overflow-x-auto pb-2">
+            {product.images.map((img, i) => (
+              <div
+                key={i}
+                className={`shrink-0 w-20 h-24 rounded-lg overflow-hidden cursor-pointer border-2 transition-all ${activeImage === i ? "border-orange-500" : "border-transparent hover:border-gray-300"
+                  }`}
+                onClick={() => setActiveImage(i)}
+              >
+                <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* RIGHT: PRODUCT DETAILS */}
+        <div className="lg:sticky lg:top-32 self-start">
+          <h1 className="text-2xl md:text-4xl font-serif font-medium mb-4">{product.title}</h1>
+
+          <div className="flex items-center gap-2 mb-6">
+            <div className="flex text-yellow-400">
+              {"★".repeat(product.rating || 5)}
+              <span className="text-gray-300">{"★".repeat(5 - (product.rating || 5))}</span>
+            </div>
+            <span className="text-sm text-gray-500">({product.reviews || 0} reviews)</span>
           </div>
 
-          {/* Price */}
           <div className="mb-8">
-            <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+            <div className="text-3xl font-bold text-gray-900 mb-1">
               ₹ {product.price.toLocaleString()}
             </div>
             <p className="text-sm text-gray-500">Inclusive of all taxes</p>
@@ -119,44 +99,27 @@ const ProductView = () => {
 
           {/* Quantity */}
           <div className="mb-8">
-            <label className="block text-sm font-medium text-gray-700 mb-3">Quantity</label>
-            <div className="flex items-center w-32 border border-gray-300 rounded-lg overflow-hidden">
-              <button 
-                className="w-12 h-12 flex items-center justify-center text-xl hover:bg-gray-50 transition-colors"
-                onClick={() => setQty(Math.max(1, qty - 1))}
-              >
-                −
-              </button>
-              <span className="px-4 py-3 text-lg font-semibold border-x border-gray-200">
-                {qty}
-              </span>
-              <button 
-                className="w-12 h-12 flex items-center justify-center text-xl hover:bg-gray-50 transition-colors"
-                onClick={() => setQty(qty + 1)}
-              >
-                +
-              </button>
+            <label className="block text-sm font-medium mb-3">Quantity</label>
+            <div className="flex items-center w-32 border border-gray-300 rounded-lg">
+              <button className="w-10 h-10 hover:bg-gray-100" onClick={() => setQty(Math.max(1, qty - 1))}>−</button>
+              <span className="flex-1 text-center font-semibold">{qty}</span>
+              <button className="w-10 h-10 hover:bg-gray-100" onClick={() => setQty(qty + 1)}>+</button>
             </div>
           </div>
 
-          {/* Size */}
+          {/* Size Selection */}
           <div className="mb-8">
-            <div className="flex justify-between items-center mb-4">
-              <label className="text-sm font-medium text-gray-700">Size</label>
-              <button className="flex items-center gap-1 text-xs text-gray-500 hover:text-gray-900 transition-colors">
-                <Ruler size={14} /> Size Chart
-              </button>
+            <div className="flex justify-between mb-4">
+              <label className="text-sm font-medium">Size</label>
+              <button className="flex items-center gap-1 text-xs text-gray-500"><Ruler size={14} /> Size Chart</button>
             </div>
-            <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
+            <div className="flex flex-wrap gap-2">
               {product.sizes.map((size) => (
                 <button
                   key={size}
                   onClick={() => setSelectedSize(size)}
-                  className={`py-3 px-4 border rounded-lg text-sm font-medium transition-all shadow-sm ${
-                    selectedSize === size
-                      ? "bg-orange-500 border-orange-500 text-white shadow-md"
-                      : "bg-white border-gray-200 hover:border-orange-400 hover:shadow-sm text-gray-800"
-                  }`}
+                  className={`py-2 px-6 border rounded-lg transition-all ${selectedSize === size ? "bg-black text-white border-black" : "bg-white hover:border-orange-500"
+                    }`}
                 >
                   {size}
                 </button>
@@ -164,47 +127,32 @@ const ProductView = () => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* Buttons */}
           <div className="grid grid-cols-2 gap-4 mb-8">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white py-4 px-6 font-semibold uppercase tracking-wide rounded-lg shadow-lg transition-all text-sm hover:shadow-xl transform hover:-translate-y-0.5">
-              Add to Cart
-            </button>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white py-4 px-6 font-semibold uppercase tracking-wide rounded-lg shadow-lg transition-all text-sm hover:shadow-xl transform hover:-translate-y-0.5">
-              Buy Now
-            </button>
+            <button className="bg-orange-500 text-white py-4 rounded-lg font-bold hover:bg-orange-600 transition-colors">ADD TO CART</button>
+            <button className="bg-black text-white py-4 rounded-lg font-bold hover:bg-gray-800 transition-colors">BUY NOW</button>
           </div>
 
-          {/* Social Actions */}
-          <div className="flex items-center justify-center gap-8 py-6 border-y border-gray-100 mb-8">
-            <button className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-500 transition-colors">
-              <Share2 size={18} /> Share
-            </button>
-            <button className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-500 transition-colors">
-              <Heart size={18} /> Add to Wishlist
-            </button>
-          </div>
-
-          {/* Description */}
-          <div className="space-y-4">
-            <button 
-              className="flex justify-between items-center w-full py-4 border-b-2 border-dashed border-gray-200"
+          {/* Description Accordion */}
+          <div className="border-t pt-4">
+            <button
+              className="flex justify-between w-full py-2 font-bold text-lg"
               onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
             >
-              <span className="text-lg font-semibold text-gray-900">Description</span>
-              <span className="text-2xl transition-transform">{isDescriptionOpen ? "−" : "+"}</span>
+              Description <span>{isDescriptionOpen ? "−" : "+"}</span>
             </button>
-            
             {isDescriptionOpen && (
-              <div className="text-sm text-gray-700 space-y-4 pt-4 animate-fade-in">
+              <div className="text-sm text-gray-600 space-y-4 pt-2">
                 <p>{product.description}</p>
-                {product.details && (
-                  <div className="grid grid-cols-2 md:grid-cols-1 gap-2">
-                    {product.details.map((detail, idx) => (
-                      <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 shrink-0"></div>
-                        <span>{detail}</span>
-                      </div>
-                    ))}
+                {/* Check if details is an array (map it) or an object (display keys) */}
+                {Array.isArray(product.details) ? (
+                  <ul className="list-disc pl-5 space-y-1">
+                    {product.details.map((d, i) => <li key={i}>{d}</li>)}
+                  </ul>
+                ) : (
+                  <div className="bg-gray-100 p-4 rounded-lg">
+                    <p><strong>Material:</strong> {product.details?.material_desc}</p>
+                    <p><strong>Care:</strong> {product.details?.care}</p>
                   </div>
                 )}
               </div>
