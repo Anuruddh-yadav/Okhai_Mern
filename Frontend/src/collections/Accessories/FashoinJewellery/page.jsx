@@ -1,5 +1,7 @@
 import React from 'react';
 import FiltersSideBar from '../filters/filtersSideBar.jsx';
+import fashionJewelleryProduct from '../data/FashionJewelleryproduct.js';
+import Collection from '../../../All_Products/AccessoriesCollections.jsx';
 
 const FashoinJewellery = () => {
     
@@ -7,8 +9,8 @@ const FashoinJewellery = () => {
         <>
             <main className=''>
                 <section>
-                    <aside><FiltersSideBar /></aside>
-                    <div>{fashionJewelleryProduct.image}</div>
+                    {/* <aside><FiltersSideBar /></aside> */}
+                    <Collection />
                 </section>
             </main>
         </>

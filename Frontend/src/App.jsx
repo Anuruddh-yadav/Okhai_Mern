@@ -15,27 +15,27 @@ import FashoinJewellery from "./collections/Accessories/FashoinJewellery/page.js
 
 function App() {
   return (
-    <FashoinJewellery />
-    // <BrowserRouter>
-    // {/* <NavbarSlider/>
-    // <Navbar />
-    // <CreateAccount />
-    // <Footer /> */}
     
-    // <ScrollToTop />
-    //   <Routes>
-    //     {/* All routes inside Layout will show the Navbar and Footer */}
-    //     <Route element={<Layout />}>
-    //       <Route path="/" element={<Home />} />
-    //       <Route path="/collections/:type" element={<CollectionCategory />} />
+    <BrowserRouter>
+    {/* <NavbarSlider/>
+    <Navbar />
+    <CreateAccount />
+    <Footer /> */}
+    
+    <ScrollToTop />
+      <Routes>
+        {/* All routes inside Layout will show the Navbar and Footer */}
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/collections/:type" element={<CollectionCategory />} />
           
-    //       {/* Footer Routes */}
-    //       <Route path="/about" element={<About />} />
-    //       <Route path="/partner-onboarding" element={<PartnerOnBoarding />} />
-    //       <Route path="/contact" element={<Contact />} />
-    //     </Route>
-    //   </Routes>
-    // </BrowserRouter>
+          {/* Footer Routes */}
+          <Route path="/about" element={<About />} />
+          <Route path="/partner-onboarding" element={<PartnerOnBoarding />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,13 +1,7 @@
 //All Clothing Jayam Part
-import Kurta1 from "../assets/company/clothingPageImages/kurta1.png";
-import Dress1 from "../assets/company/clothingPageImages/dress1.png";
-import Dress2 from "../assets/company/clothingPageImages/dress2.png";
-import Dress3 from "../assets/company/clothingPageImages/dress3.png";
-import ProductCard from "../collections/Clothing/products/ProductCard";
+import ProductCard from "../collections/Accessories/ProductCard.jsx";
 
 import React, { useState } from "react";
-
-
 
 const Collection = () => {
   const [price, setPrice] = useState(null);
@@ -116,30 +110,8 @@ const Collection = () => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-10">
-          <ProductCard img={Kurta1} title="Okhai 'Affection' Pure Cotton Dress" price="4,200" tag="Best Seller" />
-          <ProductCard img={Dress1} title="Okhai 'Black Olive' Pure Linen Pant" price="3,500" />
-          <ProductCard img={Dress2} title="Okhai 'Ishqiya' Hand-Embroidery" price="4,100" tag="Best Seller" />
-          <ProductCard img={Dress3} title="Okhai 'Mighty' Hand Embroidered" price="4,200" tag="Best Seller" />
-          <ProductCard img={Kurta1} title="Okhai 'Affection' Pure Cotton Dress" price="4,200" tag="Best Seller" />
-          <ProductCard img={Dress1} title="Okhai 'Black Olive' Pure Linen Pant" price="3,500" />
-          <ProductCard img={Dress2} title="Okhai 'Ishqiya' Hand-Embroidery" price="4,100" tag="Best Seller" />
-          <ProductCard img={Dress3} title="Okhai 'Mighty' Hand Embroidered" price="4,200" tag="Best Seller" />
-          <ProductCard img={Kurta1} title="Okhai 'Affection' Pure Cotton Dress" price="4,200" tag="Best Seller" />
-          <ProductCard img={Dress1} title="Okhai 'Black Olive' Pure Linen Pant" price="3,500" />
-          <ProductCard img={Dress2} title="Okhai 'Ishqiya' Hand-Embroidery" price="4,100" tag="Best Seller" />
-          <ProductCard img={Dress3} title="Okhai 'Mighty' Hand Embroidered" price="4,200" tag="Best Seller" />
-          <ProductCard img={Kurta1} title="Okhai 'Affection' Pure Cotton Dress" price="4,200" tag="Best Seller" />
-          <ProductCard img={Dress1} title="Okhai 'Black Olive' Pure Linen Pant" price="3,500" />
-          <ProductCard img={Dress2} title="Okhai 'Ishqiya' Hand-Embroidery" price="4,100" tag="Best Seller" />
-          <ProductCard img={Dress3} title="Okhai 'Mighty' Hand Embroidered" price="4,200" tag="Best Seller" />
-          <ProductCard img={Kurta1} title="Okhai 'Affection' Pure Cotton Dress" price="4,200" tag="Best Seller" />
-          <ProductCard img={Dress1} title="Okhai 'Black Olive' Pure Linen Pant" price="3,500" />
-          <ProductCard img={Dress2} title="Okhai 'Ishqiya' Hand-Embroidery" price="4,100" tag="Best Seller" />
-          <ProductCard img={Dress3} title="Okhai 'Mighty' Hand Embroidered" price="4,200" tag="Best Seller" />
-          <ProductCard img={Kurta1} title="Okhai 'Affection' Pure Cotton Dress" price="4,200" tag="Best Seller" />
-          <ProductCard img={Dress1} title="Okhai 'Black Olive' Pure Linen Pant" price="3,500" />
-          <ProductCard img={Dress2} title="Okhai 'Ishqiya' Hand-Embroidery" price="4,100" tag="Best Seller" />
-          <ProductCard img={Dress3} title="Okhai 'Mighty' Hand Embroidered" price="4,200" tag="Best Seller" />
+          <ProductCard img={'https://okhai.org/cdn/shop/files/EAR064-A_1.jpg?v=1698667378&width=750'} title="Okhai 'Affection' Pure Cotton Dress" price="4,200" tag="Best Seller" />
+          
         </div>
       </main>
     </section>
