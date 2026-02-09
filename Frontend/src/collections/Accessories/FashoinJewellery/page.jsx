@@ -8,7 +8,7 @@ const FashoinJewellery = () => {
             <main className=''>
                 <section>
                     <aside><FiltersSideBar /></aside>
-                    <div>{allAccessoriesProducts.fashionJewelleryProduct.image}</div>
+                    <div>{fashionJewelleryProduct.image}</div>
                 </section>
             </main>
         </>

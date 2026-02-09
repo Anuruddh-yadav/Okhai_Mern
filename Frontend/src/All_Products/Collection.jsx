@@ -39,7 +39,7 @@ const Collection = () => {
 
   return (
     /* Use flex here to put sidebar and content side-by-side */
-    <section className="relative flex px-6 py-50 max-w-[1600px] mx-auto">
+    <section className="relative flex px-6 py-50 max-w-400 mx-auto">
 
       {/* 1. LEFT SIDEBAR (Sticky is better than Fixed here so it stays in the flow) */}
       <aside className="w-64 sticky top-32 h-[calc(100vh-140px)] overflow-y-auto hidden md:block">

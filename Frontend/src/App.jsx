@@ -7,6 +7,7 @@ import About from "./Footer/About.jsx";
 import PartnerOnBoarding from "./Footer/PartnerOnBoarding.jsx"; 
 import Contact from "./Footer/Contact.jsx"; 
 import CreateAccount from "./Home/CreateAccount.jsx";
+import FashoinJewellery from "./collections/Accessories/FashoinJewellery/page.jsx";
 
 // import Navbar from "./navbar/Navbar";
 // import Footer from "./Footer/Footer";
@@ -14,25 +15,27 @@ import CreateAccount from "./Home/CreateAccount.jsx";
 
 function App() {
   return (
-    <BrowserRouter>
-    {/* <NavbarSlider/>
-    <Navbar />
-    <CreateAccount />
-    <Footer /> */}
-    <ScrollToTop />
-      <Routes>
-        {/* All routes inside Layout will show the Navbar and Footer */}
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/collections/:type" element={<CollectionCategory />} />
+    <FashoinJewellery />
+    // <BrowserRouter>
+    // {/* <NavbarSlider/>
+    // <Navbar />
+    // <CreateAccount />
+    // <Footer /> */}
+    
+    // <ScrollToTop />
+    //   <Routes>
+    //     {/* All routes inside Layout will show the Navbar and Footer */}
+    //     <Route element={<Layout />}>
+    //       <Route path="/" element={<Home />} />
+    //       <Route path="/collections/:type" element={<CollectionCategory />} />
           
-          {/* Footer Routes */}
-          <Route path="/about" element={<About />} />
-          <Route path="/partner-onboarding" element={<PartnerOnBoarding />} />
-          <Route path="/contact" element={<Contact />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    //       {/* Footer Routes */}
+    //       <Route path="/about" element={<About />} />
+    //       <Route path="/partner-onboarding" element={<PartnerOnBoarding />} />
+    //       <Route path="/contact" element={<Contact />} />
+    //     </Route>
+    //   </Routes>
+    // </BrowserRouter>
   );
 }
 
