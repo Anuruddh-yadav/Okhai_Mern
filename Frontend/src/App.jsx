@@ -11,6 +11,8 @@ import ProductView from "./collections/Clothing/products/ProductView.jsx";
 import Checkout from "./Checkout/Checkout.jsx";
 import Tracking from "./Tracking/Tracking.jsx";
 import { CartProvider } from "./context/CartContext";
+import Login from "./Home/Login.jsx";
+
 
 
 
@@ -25,7 +27,8 @@ function App() {
           {/* All routes inside Layout will show the Navbar and Footer */}
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/createaccount" element={<CreateAccount />} />
+            <Route path="/create-account" element={<CreateAccount />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/tracking" element={<Tracking />} />
             <Route path="/collections/:categoryName" element={<CollectionCategory />} />

@@ -65,7 +65,7 @@ const ProductView = () => {
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-8 py-32 font-sans text-gray-800 bg-gray-50 min-h-screen">
+    <section className="max-w-7xl mx-auto px-4 md:px-8 py-32 font-sans text-gray-800 bg-gray-50 min-h-screen pt-39">
 
       {/* Breadcrumbs - uses product.title to match your data */}
       <div className="text-xs text-gray-500 mb-8 uppercase tracking-wide">

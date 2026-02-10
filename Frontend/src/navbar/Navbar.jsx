@@ -385,7 +385,7 @@ const Navbar = ({ onCartClick }) => {
                             alt="Search"
                             className="px-1 h-9 cursor-pointer py-2"
                         />
-                        <Link to="createaccount">
+                        <Link to="create-account">
                             <img
                                 src={User}
                                 alt="User"
@@ -416,7 +416,7 @@ const Navbar = ({ onCartClick }) => {
                     </div>
                 </div>
 
-                <div className="hidden md:flex w-345 mx-auto gap-19 py-3 justify-between text-sm tracking-wide font-medium px-22 pt-0">
+                <div className="hidden md:flex w-345 max-w-8xl mx-auto gap-14 py-3 justify-between text-[13.5px] tracking-widest (0.1em) font-thin font-serif uppercase px-22 pt-0">
                     <button>
                         <span
                             className={clsx(

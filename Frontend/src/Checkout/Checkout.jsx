@@ -89,7 +89,7 @@ const Checkout = () => {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 py-8 px-4">
+    <main className="min-h-screen bg-gray-50 py-8 px-4 pt-40">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-3xl font-bold mb-8">Checkout</h1>
 
